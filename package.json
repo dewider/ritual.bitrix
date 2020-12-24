@@ -1,0 +1,11 @@
+{
+  "name": "ritual.bitrix",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "node-sass %INIT_CWD%/scss/ -o %INIT_CWD%/ -w --include-path -r",
+    "test": "echo %INIT_CWD%"
+  },
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

@@ -1,0 +1,230 @@
+/*! SECTION MAIN PAGE PRODUCTS START */
+.main_page_products_wrapper {
+    .prices_content {
+        padding: 40px 0;
+
+        .prices_navigation_tabs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+
+            li {
+                a {
+                    display: block;
+                    padding: 35px 108px;
+                    text-decoration: none;
+                    color: #1b1b1b;
+                    font-size: 19px;
+                    font-weight: 700;
+                    font-style: normal;
+                    letter-spacing: normal;
+                    line-height: normal;
+                    text-align: left;
+                    text-transform: uppercase;
+
+                    &.active {
+                        background: #f3f3f3;
+                        border-top: 4px solid #cccccc;
+                    }
+                }
+            }
+        }
+
+        .prices_content_tabs {
+            .tab {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 40px 0;
+                background: #f3f3f3;
+
+                .tab_item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-decoration: none;
+                    width: calc(100% / 4);
+                    padding: 15px;
+                    transition: background 0.2s, box-shadow 0.2s;
+                    background: #ffffff;
+                    border-radius: 5px;
+                    margin: 0 14px;
+
+                    img {
+                        display: block;
+                    }
+
+                    h4 {
+                        margin: 15px 0 0;
+                        color: #474747;
+                        font-size: 17px;
+                        font-weight: 700;
+                        font-style: normal;
+                        letter-spacing: normal;
+                        line-height: 33.02px;
+                        text-align: left;
+                        text-transform: uppercase;
+                    }
+
+                    .descr {
+                        margin: 13px 0;
+                        color: #474747;
+                        font-size: 14px;
+                        font-weight: 400;
+                        font-style: normal;
+                        letter-spacing: normal;
+                        line-height: 19.17px;
+                        text-align: center;
+                    }
+
+                    .price {
+                        margin: 0 0 15px;
+                        color: #9b062d;
+                        font-size: 25px;
+                        font-weight: 700;
+                        font-style: normal;
+                        letter-spacing: normal;
+                        line-height: normal;
+                        text-align: left;
+                        text-transform: uppercase;
+
+                        .fa {
+                            color: #9b062d;
+                            font-size: 22px;
+                        }
+                    }
+
+                    &:hover,
+                    &:focus {
+                        box-shadow: 0 0 35px rgba(0, 2, 4, 0.12);
+                    }
+
+                    .btn {
+                        width: 100%;
+                        margin-top: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1310px) {
+        .prices_content {
+            .prices_navigation_tabs {
+                li {
+                    a {
+                        padding: 35px 98px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1260px) {
+        .prices_content {
+            .prices_navigation_tabs {
+                li {
+                    a {
+                        padding: 35px 78px;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .prices_content_tabs {
+                .tab {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    padding: 40px 0;
+
+                    .tab_item {
+                        align-items: center;
+                        width: calc(80% / 2 - 28px);
+                        padding: 15px 10px;
+                        margin: 15px 14px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 980px) {
+        .prices_content {
+            .prices_navigation_tabs {
+                li {
+                    a {
+                        padding: 19px 42px;
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .prices_content_tabs {
+                .tab {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    padding: 40px 0;
+
+                    .tab_item {
+                        align-items: center;
+                        width: calc(80% / 2 - 28px);
+                        padding: 15px 10px;
+                        margin: 15px 14px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 780px) {
+        .prices_content {
+            .prices_navigation_tabs {
+                display: block;
+
+                li {
+                    a {
+                        padding: 19px 42px;
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            .prices_content_tabs {
+                .tab {
+                    display: block;
+                    padding: 40px 15px;
+
+                    .tab_item {
+                        align-items: center;
+                        width: 100%;
+                        padding: 15px 10px;
+                        margin: 15px 0;
+
+                        h4 {
+                            font-size: 16px;
+                        }
+
+                        .descr {
+                            font-size: 13px;
+                            margin: 5px 0;
+                        }
+
+                        .price {
+                            font-size: 23px;
+                        }
+
+                        .btn {
+                            padding: 13px 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*! SECTION MAIN PAGE PRODUCTS END */
