@@ -24,6 +24,7 @@ $this->setFrameMode(true);
 		<?
 		foreach ($arResult['SECTIONS'] as &$arSection):
 
+			if ( $arSection["CODE"] == "recommendation" || $arSection["CODE"] == "stock") continue;
 			if (false === $arSection['PICTURE'])
 				$arSection['PICTURE'] = array(
 					'SRC' => $arCurView['EMPTY_IMG'],

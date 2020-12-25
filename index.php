@@ -188,7 +188,6 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 	)
 );?>
 
-
 <!--SECTION MAIN PAGE CONTRACT START-->
 <section class="main_page_contract_wrapper">
     <div class="container">
