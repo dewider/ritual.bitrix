@@ -10,6 +10,8 @@
  * @var string $componentPath
  * @var string $templateFolder
  */
+
+define( 'MAX_PRODUCT_SLIDE', 5);
 ?>
 <!--SECTION PRODUCT PAGE CONTENT START-->
 <section class="product_page_content_wrapper">
@@ -19,66 +21,68 @@
 		"",
 	Array(),
 	false
-	);?>
-        <h2>ВЕНОК С ЖИВЫМИ ЦВЕТАМИ "СТАНДАРТ"</h2>
+    );?>
+        <h2><?=$arResult["NAME"];?></h2>
     </div>
     <div class="product_page_content">
         <div class="container">
             <div class="content_list">
                 <div class="content_item">
                     <div class="img_wrapper">
-                        <img src="/img/product.png" alt="product" class="active">
-                        <img src="/img/otpevanie.jpg" alt="product">
-                        <img src="/img/35311_604_420_1.jpg" alt="product">
-                        <img src="/img/venki-na-pohorony-2.png" alt="product">
-                        <img src="/img/pic_103-840x510-crop.jpg" alt="product">
+                        <img src="<?=$arResult['PREVIEW_PICTURE']['SRC'];?>" alt="product" class="active">
+                        <? 
+                            for( $i = 2; $i <= MAX_PRODUCT_SLIDE; $i++){
+                                if( $arResult["PROPS"]["img$i"]["VALUE"] ){
+                                    echo '<img src="'.CFile::GetPath( $arResult["PROPS"]["img$i"]["VALUE"] ).'" alt="product">';
+                                }
+                            }
+                        ?>
                     </div>
                     <div class="product_carousel">
                         <div class="carousel_item">
-                            <img src="/img/product.png" alt="product">
+                            <img src="<?=$arResult['PREVIEW_PICTURE']['SRC'];?>" alt="product">
                         </div>
-                        <div class="carousel_item">
-                            <img src="/img/otpevanie.jpg" alt="product">
-                        </div>
-                        <div class="carousel_item">
-                            <img src="/img/35311_604_420_1.jpg" alt="product">
-                        </div>
-                        <div class="carousel_item">
-                            <img src="/img/venki-na-pohorony-2.png" alt="product">
-                        </div>
-                        <div class="carousel_item">
-                            <img src="/img/pic_103-840x510-crop.jpg" alt="product">
-                        </div>
+                        <? 
+                            for( $i = 2; $i <= MAX_PRODUCT_SLIDE; $i++){
+                                if( $arResult["PROPS"]["img$i"]["VALUE"] ):
+                                ?>
+                                <div class="carousel_item">
+                                    <img src="<?=CFile::GetPath( $arResult["PROPS"]["img$i"]["VALUE"] );?>" alt="product">
+                                </div>
+                                <?endif;
+                            }
+                        ?>
                     </div>
                 </div>
                 <div class="content_item">
                     <div class="code_availability_wrapper">
                         <div class="code">
                             <p>
-                                Артикул: <span class="code_number">373.359.54</span>
+                                Артикул: <span class="code_number"><?=$arResult['ID'];?></span>
                             </p>
                         </div>
                         <div class="availability">
-                            есть в наличии
+                            <?=( $arResult['PRODUCT']['AVAILABLE'] == 'Y' ? "есть в наличии" : "нет в наличии");?>
                         </div>
                     </div>
                     <div class="price">
-                        13 990
+                        <?=$arResult["DEFAULT_PRICE"]["DISCOUNT_PRICE"];?>
                         <i class="fa fa-rub" aria-hidden="true"></i>
                     </div>
                     <ul class="features">
-                        <li><span>Размер: 90, 120,150,180 см</span></li>
-                        <li><span>Цвет: зеленый фон, белые лилии и розы</span></li>
-                        <li><span>Производство: Россия</span></li>
-                        <li><span>Материал: живые цветы</span></li>
-                        <li><span>Материал каркаса: дерево</span></li>
+                        <? foreach( $arResult["PROPS"] as $propsKey => $propsItem ): ?>
+
+                            <? if(
+                                !preg_match('/^img\d+$/', $propsKey) &&
+                                $propsItem["VALUE"] &&
+                                !preg_match('/^desc$/', $propsKey)
+                            ): ?>
+                                <li><span><?=$propsItem["NAME"];?>: <?=$propsItem["VALUE"];?></span></li>
+                            <?endif;?>
+                        <?endforeach;?>
                     </ul>
                     <p class="descr">
-                        Венок классической овальной формы из живых цветов.
-                        Изготовлен по современным эскизам профессиональных ритуальных флористов.
-                        В композицию данного венка входят белые розы и изысканные
-                        белые лилии, в центре добавлены белые хризантемы, в основе
-                        использованы еловые ветви и листья папоротника.
+                    <?=$arResult['DETAIL_TEXT'];?>
                     </p>
                     <div class="size_wrapper">
                         <h6>Высота, см.</h6>
@@ -99,7 +103,7 @@
                     </div>
                     <div class="qty_wrapper">
                         <div class="qty">
-                            <input type="number" value="1" step="1" min="1">
+                            <input type="number" value="1" step="1" min="1" max="10">
                             <button class="up"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
                             <button class="down"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
                         </div>
@@ -121,25 +125,31 @@
 <section class="product_page_description_wrapper">
     <div class="container">
         <div class="product_page_description">
+            <?
+            $deliveryTabClass = "active";
+            $deliveryTabStyle = '';
+            if( $arResult['PROPS']['desc']['VALUE'] ){
+                $deliveryTabClass = '';
+                $deliveryTabStyle = 'display: none';
+            }
+            ?>
             <ul class="prices_navigation_tabs">
+                <?if( $deliveryTabClass == '' ):?>
                 <li><a href="#tab1" class="active"><span>Описание</span></a></li>
-                <li><a href="#tab2"><span>Доставка</span></a></li>
+                <?endif;?>
+                <li><a href="#tab2" class="<?=$deliveryTabClass;?>"><span>Доставка</span></a></li>
             </ul>
 
             <div class="prices_content_tabs">
+            <?if( $deliveryTabClass == '' ):?>
                 <div class="tab" id="tab1">
                     <p>
-                        Модель ритуального венка исполнена в форме эллипса.
-                        Торжественный стиль изделия подчёркивается дизайнерским решением.
-                        Вся поверхность изделия усеяна ярко-алыми садовыми гвоздиками.
-                        Оттеняют их благородную утончённость веточки изумрудного пинуса и
-                        метёлки снежной гипсофилы. Края композиции декорированы молодым еловым
-                        лапником светло-зелёного окраса. Растения представлены элитными парковыми
-                        хозяйствами России в свежесрезанном виде.
+                    <?=$arResult['PROPS']['desc']['VALUE']['TEXT'];?>
                     </p>
                 </div>
+            <?endif;?>
 
-                <div class="tab" id="tab2" style="display: none">
+                <div class="tab" id="tab2" style="<?=$deliveryTabStyle;?>">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         At dicta ducimus impedit maxime minus sequi totam! Aliquam

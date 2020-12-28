@@ -7,6 +7,8 @@
 
 /**
  * Получение цен базовых цен и скидок
+ * @param $arProductIDs {array} Массив ID товаров
+ * @param $$arPriceList {*array} Указатель на массив для результата
  */
 function getPriceList( $arProductIDs, &$arPriceList ){
 
@@ -52,8 +54,6 @@ function getSectionItems( $sectionCode, &$arItems){
         array("SECTION_CODE" => $sectionCode),
         false,
         false,
-        //array()
-        //array("ID", "NAME")
         array("ID", "NAME", "DETAIL_PAGE_URL", "PREVIEW_PICTURE", "PREVIEW_TEXT")
     );
     $IDs = array();
