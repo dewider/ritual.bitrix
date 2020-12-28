@@ -1879,54 +1879,6 @@ body {
             text-transform: uppercase;
         }
 
-        .breadcrumbs {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            margin: 0 -20px;
-
-            li + li:before {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 20px;
-                height: 1px;
-                background: #545454;
-                top: 50%;
-                left: -10px;
-            }
-
-            li {
-                position: relative;
-
-                a {
-                    display: block;
-                    text-decoration: none;
-                    color: #545454;
-                    font-size: 13px;
-                    font-weight: 400;
-                    font-style: normal;
-                    letter-spacing: normal;
-                    line-height: 76.2px;
-                    margin: 0 20px;
-                    transition: color 0.2s;
-
-                    &:hover,
-                    &:focus {
-                        color: #9b062d;
-                    }
-
-                    &:active {
-                        color: #a4a4a4;
-                        font-weight: 400;
-                    }
-                }
-            }
-        }
-
         h6 {
             color: #1a1a1a;
             font-size: 15px;
@@ -2022,28 +1974,6 @@ body {
                 line-height: 26px;
             }
 
-            .breadcrumbs {
-                margin: 0 -10px;
-
-                a + a:before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    width: 7px;
-                    height: 1px;
-                    background: #545454;
-                    top: 50%;
-                    left: -3px;
-                }
-
-                li {
-                    a {
-                        line-height: 50px;
-                        margin: 0 8px;
-                    }
-                }
-            }
-
             h6 {
                 margin-bottom: 20px;
             }
@@ -2069,54 +1999,6 @@ body {
             letter-spacing: normal;
             line-height: 33.02px;
             text-transform: uppercase;
-        }
-
-        .breadcrumbs {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            margin: 0 -20px;
-
-            li + li:before {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 20px;
-                height: 1px;
-                background: #545454;
-                top: 50%;
-                left: -10px;
-            }
-
-            li {
-                position: relative;
-
-                a {
-                    display: block;
-                    text-decoration: none;
-                    color: #545454;
-                    font-size: 13px;
-                    font-weight: 400;
-                    font-style: normal;
-                    letter-spacing: normal;
-                    line-height: 76.2px;
-                    margin: 0 20px;
-                    transition: color 0.2s;
-
-                    &:hover,
-                    &:focus {
-                        color: #9b062d;
-                    }
-
-                    &:active {
-                        color: #afafaf;
-                        font-weight: 400;
-                    }
-                }
-            }
         }
 
         .descr {
@@ -2183,28 +2065,6 @@ body {
             h2 {
                 font-size: 16px;
                 line-height: 26px;
-            }
-
-            .breadcrumbs {
-                margin: 0 -10px;
-
-                li + li:before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    width: 7px;
-                    height: 1px;
-                    background: #545454;
-                    top: 50%;
-                    left: -3px;
-                }
-
-                li {
-                    a {
-                        line-height: 50px;
-                        margin: 0 8px;
-                    }
-                }
             }
 
             .cemeteries_list_wrapper {
@@ -2413,54 +2273,6 @@ body {
         line-height: 33.02px;
         text-transform: uppercase;
         text-align: center;
-    }
-
-    .breadcrumbs {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin: 0 -20px;
-
-        li + li:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 20px;
-            height: 1px;
-            background: #545454;
-            top: 50%;
-            left: -10px;
-        }
-
-        li {
-            position: relative;
-
-            a {
-                display: block;
-                text-decoration: none;
-                color: #545454;
-                font-size: 13px;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: normal;
-                line-height: 76.2px;
-                margin: 0 20px;
-                transition: color 0.2s;
-
-                &:hover,
-                &:focus {
-                    color: #9b062d;
-                }
-
-                &:active {
-                    color: #afafaf;
-                    font-weight: 400;
-                }
-            }
-        }
     }
 
     .contacts_content {
@@ -2843,9 +2655,6 @@ body {
         }
     }
     @media (max-width: 780px) {
-        .breadcrumbs {
-            margin: 0;
-        }
         .contacts_content {
             .map_contacts_wrapper {
                 display: block;
@@ -2966,54 +2775,6 @@ body {
         line-height: 33.02px;
         text-transform: uppercase;
         text-align: center;
-    }
-
-    .breadcrumbs {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin: 0 -20px;
-
-        li + li:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 20px;
-            height: 1px;
-            background: #545454;
-            top: 50%;
-            left: -10px;
-        }
-
-        li {
-            position: relative;
-
-            a {
-                display: block;
-                text-decoration: none;
-                color: #545454;
-                font-size: 13px;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: normal;
-                line-height: 76.2px;
-                margin: 0 20px;
-                transition: color 0.2s;
-
-                &:hover,
-                &:focus {
-                    color: #9b062d;
-                }
-
-                &:active {
-                    color: #afafaf;
-                    font-weight: 400;
-                }
-            }
-        }
     }
 
     .prices_content {
@@ -3239,10 +3000,6 @@ body {
             line-height: 28px;
         }
 
-        .breadcrumbs {
-            width: 280px;
-        }
-
         .prices_content {
             .prices_navigation_tabs {
                 li {
@@ -3330,54 +3087,6 @@ body {
 /*! SECTION FUNERAL ORGANIZATION PAGE INFO CONTENT START */
 .funeral_organization_page_info_wrapper {
     padding-bottom: 46px;
-
-    .breadcrumbs {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin: 0 -20px;
-
-        li + li:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 20px;
-            height: 1px;
-            background: #545454;
-            top: 50%;
-            left: -10px;
-        }
-
-        li {
-            position: relative;
-
-            a {
-                display: block;
-                text-decoration: none;
-                color: #545454;
-                font-size: 13px;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: normal;
-                line-height: 76.2px;
-                margin: 0 20px;
-                transition: color 0.2s;
-
-                &:hover,
-                &:focus {
-                    color: #9b062d;
-                }
-
-                &:active {
-                    color: #afafaf;
-                    font-weight: 400;
-                }
-            }
-        }
-    }
 
     h2 {
         color: #1b1b1b;
@@ -3480,39 +3189,7 @@ body {
     }
     @media (max-width: 780px) {
         padding-bottom: 30px;
-        .breadcrumbs {
-            align-items: center;
-            margin: 30px -20px 40px;
-            width: 300px;
-
-            li + li:before {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 8px;
-                height: 1px;
-                background: #545454;
-                top: 50%;
-                left: -4px;
-            }
-
-            li {
-                position: relative;
-
-                a {
-                    display: block;
-                    text-decoration: none;
-                    color: #545454;
-                    font-size: 12px;
-                    font-weight: 400;
-                    font-style: normal;
-                    letter-spacing: normal;
-                    line-height: normal;
-                    margin: 0 20px;
-                    transition: color 0.2s;
-                }
-            }
-        }
+        
         h2 {
             font-size: 18px;
             line-height: 28px;
@@ -4597,53 +4274,6 @@ body {
 
 /*! SECTION PRODUCT PAGE CONTENT START */
 .product_page_content_wrapper {
-    .breadcrumbs {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin: 0 -20px;
-
-        li + li:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 20px;
-            height: 1px;
-            background: #545454;
-            top: 50%;
-            left: -10px;
-        }
-
-        li {
-            position: relative;
-
-            a {
-                display: block;
-                text-decoration: none;
-                color: #545454;
-                font-size: 13px;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: normal;
-                line-height: 76.2px;
-                margin: 0 20px;
-                transition: color 0.2s;
-
-                &:hover,
-                &:focus {
-                    color: #9b062d;
-                }
-
-                &:active {
-                    color: #afafaf;
-                    font-weight: 400;
-                }
-            }
-        }
-    }
 
     h2 {
         color: #1b1b1b;
@@ -5005,28 +4635,6 @@ body {
             line-height: 26px;
         }
 
-        .breadcrumbs {
-            margin: 0;
-
-            a + a:before {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 7px;
-                height: 1px;
-                background: #545454;
-                top: 50%;
-                left: -3px;
-            }
-
-            li {
-                a {
-                    line-height: 50px;
-                    margin: 0 20px;
-                }
-            }
-        }
-
         .product_page_content {
             --background-color: #f8f8f8;
 
@@ -5365,53 +4973,6 @@ body {
 
 /*! SECTION CALCULATOR PAGE CONTENT START */
 .calculator_page_content_wrapper {
-    .breadcrumbs {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin: 0 -20px;
-
-        li + li:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 20px;
-            height: 1px;
-            background: #545454;
-            top: 50%;
-            left: -10px;
-        }
-
-        li {
-            position: relative;
-
-            a {
-                display: block;
-                text-decoration: none;
-                color: #545454;
-                font-size: 13px;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: normal;
-                line-height: 76.2px;
-                margin: 0 20px;
-                transition: color 0.2s;
-
-                &:hover,
-                &:focus {
-                    color: #9b062d;
-                }
-
-                &:active {
-                    color: #afafaf;
-                    font-weight: 400;
-                }
-            }
-        }
-    }
 
     h2 {
         color: #1b1b1b;
@@ -5577,9 +5138,6 @@ body {
     }
 
     @media (max-width: 780px) {
-        .breadcrumbs {
-            margin: 0;
-        }
 
         h2 {
             font-size: 18px;
@@ -5631,53 +5189,6 @@ body {
 
 /*! SECTION CATALOG PAGE CONTENT START */
 .catalog_page_content_wrapper {
-    .breadcrumbs {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin: 0 -20px;
-
-        li + li:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 20px;
-            height: 1px;
-            background: #545454;
-            top: 50%;
-            left: -10px;
-        }
-
-        li {
-            position: relative;
-
-            a {
-                display: block;
-                text-decoration: none;
-                color: #545454;
-                font-size: 13px;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: normal;
-                line-height: 76.2px;
-                margin: 0 20px;
-                transition: color 0.2s;
-
-                &:hover,
-                &:focus {
-                    color: #9b062d;
-                }
-
-                &:active {
-                    color: #afafaf;
-                    font-weight: 400;
-                }
-            }
-        }
-    }
 
     h2 {
         color: #1b1b1b;
@@ -6197,9 +5708,6 @@ body {
     }
 
     @media (max-width: 780px) {
-        .breadcrumbs {
-            margin: 0;
-        }
 
         h2 {
             font-size: 18px;

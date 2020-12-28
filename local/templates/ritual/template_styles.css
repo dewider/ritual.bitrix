@@ -1278,41 +1278,6 @@ body {
     letter-spacing: normal;
     line-height: 33.02px;
     text-transform: uppercase; }
-  .morgues_content_wrapper .morgues_content .breadcrumbs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0 -20px; }
-    .morgues_content_wrapper .morgues_content .breadcrumbs li + li:before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 20px;
-      height: 1px;
-      background: #545454;
-      top: 50%;
-      left: -10px; }
-    .morgues_content_wrapper .morgues_content .breadcrumbs li {
-      position: relative; }
-      .morgues_content_wrapper .morgues_content .breadcrumbs li a {
-        display: block;
-        text-decoration: none;
-        color: #545454;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: 76.2px;
-        margin: 0 20px;
-        transition: color 0.2s; }
-        .morgues_content_wrapper .morgues_content .breadcrumbs li a:hover, .morgues_content_wrapper .morgues_content .breadcrumbs li a:focus {
-          color: #9b062d; }
-        .morgues_content_wrapper .morgues_content .breadcrumbs li a:active {
-          color: #a4a4a4;
-          font-weight: 400; }
   .morgues_content_wrapper .morgues_content h6 {
     color: #1a1a1a;
     font-size: 15px;
@@ -1375,20 +1340,6 @@ body {
     .morgues_content_wrapper .morgues_content h2 {
       font-size: 16px;
       line-height: 26px; }
-    .morgues_content_wrapper .morgues_content .breadcrumbs {
-      margin: 0 -10px; }
-      .morgues_content_wrapper .morgues_content .breadcrumbs a + a:before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 7px;
-        height: 1px;
-        background: #545454;
-        top: 50%;
-        left: -3px; }
-      .morgues_content_wrapper .morgues_content .breadcrumbs li a {
-        line-height: 50px;
-        margin: 0 8px; }
     .morgues_content_wrapper .morgues_content h6 {
       margin-bottom: 20px; }
     .morgues_content_wrapper .morgues_content .morgues_list_wrapper {
@@ -1406,41 +1357,6 @@ body {
     letter-spacing: normal;
     line-height: 33.02px;
     text-transform: uppercase; }
-  .cemeteries_content_wrapper .cemeteries_content .breadcrumbs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0 -20px; }
-    .cemeteries_content_wrapper .cemeteries_content .breadcrumbs li + li:before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 20px;
-      height: 1px;
-      background: #545454;
-      top: 50%;
-      left: -10px; }
-    .cemeteries_content_wrapper .cemeteries_content .breadcrumbs li {
-      position: relative; }
-      .cemeteries_content_wrapper .cemeteries_content .breadcrumbs li a {
-        display: block;
-        text-decoration: none;
-        color: #545454;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: 76.2px;
-        margin: 0 20px;
-        transition: color 0.2s; }
-        .cemeteries_content_wrapper .cemeteries_content .breadcrumbs li a:hover, .cemeteries_content_wrapper .cemeteries_content .breadcrumbs li a:focus {
-          color: #9b062d; }
-        .cemeteries_content_wrapper .cemeteries_content .breadcrumbs li a:active {
-          color: #afafaf;
-          font-weight: 400; }
   .cemeteries_content_wrapper .cemeteries_content .descr {
     color: #1a1a1a;
     font-size: 14px;
@@ -1485,20 +1401,6 @@ body {
     .cemeteries_content_wrapper .cemeteries_content h2 {
       font-size: 16px;
       line-height: 26px; }
-    .cemeteries_content_wrapper .cemeteries_content .breadcrumbs {
-      margin: 0 -10px; }
-      .cemeteries_content_wrapper .cemeteries_content .breadcrumbs li + li:before {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 7px;
-        height: 1px;
-        background: #545454;
-        top: 50%;
-        left: -3px; }
-      .cemeteries_content_wrapper .cemeteries_content .breadcrumbs li a {
-        line-height: 50px;
-        margin: 0 8px; }
     .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper {
       display: block;
       padding: 25px 0; }
@@ -1640,42 +1542,6 @@ body {
   line-height: 33.02px;
   text-transform: uppercase;
   text-align: center; }
-
-.contacts_content_wrapper .breadcrumbs {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 0 -20px; }
-  .contacts_content_wrapper .breadcrumbs li + li:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 1px;
-    background: #545454;
-    top: 50%;
-    left: -10px; }
-  .contacts_content_wrapper .breadcrumbs li {
-    position: relative; }
-    .contacts_content_wrapper .breadcrumbs li a {
-      display: block;
-      text-decoration: none;
-      color: #545454;
-      font-size: 13px;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: 76.2px;
-      margin: 0 20px;
-      transition: color 0.2s; }
-      .contacts_content_wrapper .breadcrumbs li a:hover, .contacts_content_wrapper .breadcrumbs li a:focus {
-        color: #9b062d; }
-      .contacts_content_wrapper .breadcrumbs li a:active {
-        color: #afafaf;
-        font-weight: 400; }
 
 .contacts_content_wrapper .contacts_content {
   background: #f8f8f8;
@@ -1902,8 +1768,6 @@ body {
           width: 365px; } }
 
 @media (max-width: 780px) {
-  .contacts_content_wrapper .breadcrumbs {
-    margin: 0; }
   .contacts_content_wrapper .contacts_content .map_contacts_wrapper {
     display: block; }
     .contacts_content_wrapper .contacts_content .map_contacts_wrapper .map {
@@ -1970,42 +1834,6 @@ body {
   line-height: 33.02px;
   text-transform: uppercase;
   text-align: center; }
-
-.prices_content_wrapper .breadcrumbs {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 0 -20px; }
-  .prices_content_wrapper .breadcrumbs li + li:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 1px;
-    background: #545454;
-    top: 50%;
-    left: -10px; }
-  .prices_content_wrapper .breadcrumbs li {
-    position: relative; }
-    .prices_content_wrapper .breadcrumbs li a {
-      display: block;
-      text-decoration: none;
-      color: #545454;
-      font-size: 13px;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: 76.2px;
-      margin: 0 20px;
-      transition: color 0.2s; }
-      .prices_content_wrapper .breadcrumbs li a:hover, .prices_content_wrapper .breadcrumbs li a:focus {
-        color: #9b062d; }
-      .prices_content_wrapper .breadcrumbs li a:active {
-        color: #afafaf;
-        font-weight: 400; }
 
 .prices_content_wrapper .prices_content {
   padding: 40px 0;
@@ -2157,8 +1985,6 @@ body {
   .prices_content_wrapper h2 {
     font-size: 17px;
     line-height: 28px; }
-  .prices_content_wrapper .breadcrumbs {
-    width: 280px; }
   .prices_content_wrapper .prices_content .prices_navigation_tabs li a {
     padding: 20px 27.5px;
     font-size: 13px;
@@ -2213,41 +2039,6 @@ body {
 /*! SECTION FUNERAL ORGANIZATION PAGE INFO CONTENT START */
 .funeral_organization_page_info_wrapper {
   padding-bottom: 46px; }
-  .funeral_organization_page_info_wrapper .breadcrumbs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0 -20px; }
-    .funeral_organization_page_info_wrapper .breadcrumbs li + li:before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 20px;
-      height: 1px;
-      background: #545454;
-      top: 50%;
-      left: -10px; }
-    .funeral_organization_page_info_wrapper .breadcrumbs li {
-      position: relative; }
-      .funeral_organization_page_info_wrapper .breadcrumbs li a {
-        display: block;
-        text-decoration: none;
-        color: #545454;
-        font-size: 13px;
-        font-weight: 400;
-        font-style: normal;
-        letter-spacing: normal;
-        line-height: 76.2px;
-        margin: 0 20px;
-        transition: color 0.2s; }
-        .funeral_organization_page_info_wrapper .breadcrumbs li a:hover, .funeral_organization_page_info_wrapper .breadcrumbs li a:focus {
-          color: #9b062d; }
-        .funeral_organization_page_info_wrapper .breadcrumbs li a:active {
-          color: #afafaf;
-          font-weight: 400; }
   .funeral_organization_page_info_wrapper h2 {
     color: #1b1b1b;
     font-size: 20px;
@@ -2321,32 +2112,6 @@ body {
   @media (max-width: 780px) {
     .funeral_organization_page_info_wrapper {
       padding-bottom: 30px; }
-      .funeral_organization_page_info_wrapper .breadcrumbs {
-        align-items: center;
-        margin: 30px -20px 40px;
-        width: 300px; }
-        .funeral_organization_page_info_wrapper .breadcrumbs li + li:before {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 8px;
-          height: 1px;
-          background: #545454;
-          top: 50%;
-          left: -4px; }
-        .funeral_organization_page_info_wrapper .breadcrumbs li {
-          position: relative; }
-          .funeral_organization_page_info_wrapper .breadcrumbs li a {
-            display: block;
-            text-decoration: none;
-            color: #545454;
-            font-size: 12px;
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: normal;
-            line-height: normal;
-            margin: 0 20px;
-            transition: color 0.2s; }
       .funeral_organization_page_info_wrapper h2 {
         font-size: 18px;
         line-height: 28px;
@@ -3083,42 +2848,6 @@ body {
 
 /*! SECTION PRODUCT PAGE DESCRIPTION END */
 /*! SECTION PRODUCT PAGE CONTENT START */
-.product_page_content_wrapper .breadcrumbs {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 0 -20px; }
-  .product_page_content_wrapper .breadcrumbs li + li:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 1px;
-    background: #545454;
-    top: 50%;
-    left: -10px; }
-  .product_page_content_wrapper .breadcrumbs li {
-    position: relative; }
-    .product_page_content_wrapper .breadcrumbs li a {
-      display: block;
-      text-decoration: none;
-      color: #545454;
-      font-size: 13px;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: 76.2px;
-      margin: 0 20px;
-      transition: color 0.2s; }
-      .product_page_content_wrapper .breadcrumbs li a:hover, .product_page_content_wrapper .breadcrumbs li a:focus {
-        color: #9b062d; }
-      .product_page_content_wrapper .breadcrumbs li a:active {
-        color: #afafaf;
-        font-weight: 400; }
-
 .product_page_content_wrapper h2 {
   color: #1b1b1b;
   font-size: 20px;
@@ -3375,20 +3104,6 @@ body {
   .product_page_content_wrapper h2 {
     font-size: 16px;
     line-height: 26px; }
-  .product_page_content_wrapper .breadcrumbs {
-    margin: 0; }
-    .product_page_content_wrapper .breadcrumbs a + a:before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 7px;
-      height: 1px;
-      background: #545454;
-      top: 50%;
-      left: -3px; }
-    .product_page_content_wrapper .breadcrumbs li a {
-      line-height: 50px;
-      margin: 0 20px; }
   .product_page_content_wrapper .product_page_content {
     --background-color: #f8f8f8;
     background-color: var(--background-color);
@@ -3629,42 +3344,6 @@ body {
 
 /*! SECTION PRODUCT PAGE CONTENT END */
 /*! SECTION CALCULATOR PAGE CONTENT START */
-.calculator_page_content_wrapper .breadcrumbs {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 0 -20px; }
-  .calculator_page_content_wrapper .breadcrumbs li + li:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 1px;
-    background: #545454;
-    top: 50%;
-    left: -10px; }
-  .calculator_page_content_wrapper .breadcrumbs li {
-    position: relative; }
-    .calculator_page_content_wrapper .breadcrumbs li a {
-      display: block;
-      text-decoration: none;
-      color: #545454;
-      font-size: 13px;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: 76.2px;
-      margin: 0 20px;
-      transition: color 0.2s; }
-      .calculator_page_content_wrapper .breadcrumbs li a:hover, .calculator_page_content_wrapper .breadcrumbs li a:focus {
-        color: #9b062d; }
-      .calculator_page_content_wrapper .breadcrumbs li a:active {
-        color: #afafaf;
-        font-weight: 400; }
-
 .calculator_page_content_wrapper h2 {
   color: #1b1b1b;
   font-size: 20px;
@@ -3782,8 +3461,6 @@ body {
     margin: 0 -15px; } }
 
 @media (max-width: 780px) {
-  .calculator_page_content_wrapper .breadcrumbs {
-    margin: 0; }
   .calculator_page_content_wrapper h2 {
     font-size: 18px;
     line-height: 26px; }
@@ -3810,42 +3487,6 @@ body {
 
 /*! SECTION CALCULATOR PAGE CONTENT END */
 /*! SECTION CATALOG PAGE CONTENT START */
-.catalog_page_content_wrapper .breadcrumbs {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 0 -20px; }
-  .catalog_page_content_wrapper .breadcrumbs li + li:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 1px;
-    background: #545454;
-    top: 50%;
-    left: -10px; }
-  .catalog_page_content_wrapper .breadcrumbs li {
-    position: relative; }
-    .catalog_page_content_wrapper .breadcrumbs li a {
-      display: block;
-      text-decoration: none;
-      color: #545454;
-      font-size: 13px;
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: normal;
-      line-height: 76.2px;
-      margin: 0 20px;
-      transition: color 0.2s; }
-      .catalog_page_content_wrapper .breadcrumbs li a:hover, .catalog_page_content_wrapper .breadcrumbs li a:focus {
-        color: #9b062d; }
-      .catalog_page_content_wrapper .breadcrumbs li a:active {
-        color: #afafaf;
-        font-weight: 400; }
-
 .catalog_page_content_wrapper h2 {
   color: #1b1b1b;
   font-size: 20px;
@@ -4212,8 +3853,6 @@ body {
       grid-template-rows: repeat(6, 1fr); } }
 
 @media (max-width: 780px) {
-  .catalog_page_content_wrapper .breadcrumbs {
-    margin: 0; }
   .catalog_page_content_wrapper h2 {
     font-size: 18px; }
   .catalog_page_content_wrapper .catalog_page_content {
@@ -4448,88 +4087,88 @@ body {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(90px, auto, 17px, 0); }
+    clip: rect(43px, auto, 31px, 0); }
   5% {
-    clip: rect(51px, auto, 29px, 0); }
+    clip: rect(60px, auto, 13px, 0); }
   10% {
-    clip: rect(69px, auto, 16px, 0); }
+    clip: rect(3px, auto, 30px, 0); }
   15% {
-    clip: rect(56px, auto, 59px, 0); }
+    clip: rect(93px, auto, 74px, 0); }
   20% {
-    clip: rect(90px, auto, 70px, 0); }
+    clip: rect(97px, auto, 11px, 0); }
   25% {
-    clip: rect(36px, auto, 81px, 0); }
+    clip: rect(66px, auto, 83px, 0); }
   30% {
-    clip: rect(60px, auto, 15px, 0); }
+    clip: rect(24px, auto, 92px, 0); }
   35% {
-    clip: rect(20px, auto, 38px, 0); }
+    clip: rect(23px, auto, 19px, 0); }
   40% {
-    clip: rect(3px, auto, 46px, 0); }
+    clip: rect(28px, auto, 57px, 0); }
   45% {
-    clip: rect(58px, auto, 37px, 0); }
+    clip: rect(37px, auto, 95px, 0); }
   50% {
-    clip: rect(84px, auto, 5px, 0); }
+    clip: rect(72px, auto, 55px, 0); }
   55% {
-    clip: rect(42px, auto, 41px, 0); }
+    clip: rect(78px, auto, 3px, 0); }
   60% {
-    clip: rect(99px, auto, 42px, 0); }
+    clip: rect(41px, auto, 11px, 0); }
   65% {
-    clip: rect(39px, auto, 78px, 0); }
+    clip: rect(1px, auto, 66px, 0); }
   70% {
-    clip: rect(62px, auto, 27px, 0); }
+    clip: rect(8px, auto, 13px, 0); }
   75% {
-    clip: rect(17px, auto, 94px, 0); }
+    clip: rect(51px, auto, 98px, 0); }
   80% {
-    clip: rect(14px, auto, 44px, 0); }
+    clip: rect(99px, auto, 74px, 0); }
   85% {
-    clip: rect(94px, auto, 89px, 0); }
+    clip: rect(48px, auto, 61px, 0); }
   90% {
-    clip: rect(26px, auto, 57px, 0); }
+    clip: rect(60px, auto, 44px, 0); }
   95% {
-    clip: rect(17px, auto, 88px, 0); }
+    clip: rect(5px, auto, 78px, 0); }
   100% {
-    clip: rect(96px, auto, 8px, 0); } }
+    clip: rect(77px, auto, 60px, 0); } }
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(58px, 9999px, 95px, 0); }
+    clip: rect(33px, 9999px, 40px, 0); }
   5% {
-    clip: rect(42px, 9999px, 47px, 0); }
+    clip: rect(76px, 9999px, 29px, 0); }
   10% {
-    clip: rect(70px, 9999px, 99px, 0); }
+    clip: rect(29px, 9999px, 57px, 0); }
   15% {
-    clip: rect(6px, 9999px, 11px, 0); }
+    clip: rect(68px, 9999px, 15px, 0); }
   20% {
-    clip: rect(42px, 9999px, 17px, 0); }
+    clip: rect(7px, 9999px, 76px, 0); }
   25% {
-    clip: rect(27px, 9999px, 43px, 0); }
+    clip: rect(65px, 9999px, 84px, 0); }
   30% {
-    clip: rect(6px, 9999px, 62px, 0); }
+    clip: rect(97px, 9999px, 84px, 0); }
   35% {
-    clip: rect(13px, 9999px, 17px, 0); }
+    clip: rect(86px, 9999px, 5px, 0); }
   40% {
-    clip: rect(15px, 9999px, 82px, 0); }
+    clip: rect(47px, 9999px, 71px, 0); }
   45% {
-    clip: rect(7px, 9999px, 17px, 0); }
+    clip: rect(6px, 9999px, 61px, 0); }
   50% {
-    clip: rect(58px, 9999px, 47px, 0); }
+    clip: rect(58px, 9999px, 57px, 0); }
   55% {
-    clip: rect(40px, 9999px, 47px, 0); }
+    clip: rect(57px, 9999px, 4px, 0); }
   60% {
-    clip: rect(29px, 9999px, 59px, 0); }
+    clip: rect(2px, 9999px, 99px, 0); }
   65% {
-    clip: rect(85px, 9999px, 15px, 0); }
+    clip: rect(56px, 9999px, 30px, 0); }
   70% {
-    clip: rect(27px, 9999px, 10px, 0); }
+    clip: rect(48px, 9999px, 75px, 0); }
   75% {
-    clip: rect(95px, 9999px, 54px, 0); }
+    clip: rect(91px, 9999px, 47px, 0); }
   80% {
-    clip: rect(79px, 9999px, 80px, 0); }
+    clip: rect(89px, 9999px, 20px, 0); }
   85% {
-    clip: rect(36px, 9999px, 43px, 0); }
+    clip: rect(35px, 9999px, 24px, 0); }
   90% {
-    clip: rect(47px, 9999px, 77px, 0); }
+    clip: rect(98px, 9999px, 7px, 0); }
   95% {
-    clip: rect(32px, 9999px, 40px, 0); }
+    clip: rect(38px, 9999px, 2px, 0); }
   100% {
-    clip: rect(6px, 9999px, 12px, 0); } }
+    clip: rect(66px, 9999px, 45px, 0); } }
