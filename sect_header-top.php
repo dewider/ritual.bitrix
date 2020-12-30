@@ -35,7 +35,6 @@
                 <div class="header_btn">
                     <button class="btn">Заказать обратный звонок</button>
                 </div>
-                <div class="shopping_cart">
                 <?$APPLICATION->IncludeComponent(
                 	"bitrix:sale.basket.basket.line",
                 	"",
@@ -57,13 +56,6 @@
                 		"SHOW_TOTAL_PRICE" => "Y"
                 	)
                 );?>
-                    <a href="#">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/icons/shopping-cart%20(1).png" alt="cart">
-                    </a>
-                    <a href="/personal/cart/">
-                    <span>Корзина</span>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
