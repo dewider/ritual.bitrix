@@ -3268,6 +3268,7 @@
 
 			this.initBasketUrl();
 			this.fillBasketProps();
+			console.log(this.basketParams);
 			BX.ajax({
 				method: 'POST',
 				dataType: 'json',

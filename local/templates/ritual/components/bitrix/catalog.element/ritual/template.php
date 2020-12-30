@@ -12,6 +12,42 @@
  */
 
 define( 'MAX_PRODUCT_SLIDE', 5);
+
+$mainId = $this->GetEditAreaId($arResult['ID']);
+$itemIds = array(
+	'ID' => $mainId,
+	'DISCOUNT_PERCENT_ID' => $mainId.'_dsc_pict',
+	'STICKER_ID' => $mainId.'_sticker',
+	'BIG_SLIDER_ID' => $mainId.'_big_slider',
+	'BIG_IMG_CONT_ID' => $mainId.'_bigimg_cont',
+	'SLIDER_CONT_ID' => $mainId.'_slider_cont',
+	'OLD_PRICE_ID' => $mainId.'_old_price',
+	'PRICE_ID' => $mainId.'_price',
+	'DISCOUNT_PRICE_ID' => $mainId.'_price_discount',
+	'PRICE_TOTAL' => $mainId.'_price_total',
+	'SLIDER_CONT_OF_ID' => $mainId.'_slider_cont_',
+	'QUANTITY_ID' => $mainId.'_quantity',
+	'QUANTITY_DOWN_ID' => $mainId.'_quant_down',
+	'QUANTITY_UP_ID' => $mainId.'_quant_up',
+	'QUANTITY_MEASURE' => $mainId.'_quant_measure',
+	'QUANTITY_LIMIT' => $mainId.'_quant_limit',
+	'BUY_LINK' => $mainId.'_buy_link',
+	'ADD_BASKET_LINK' => $mainId.'_add_basket_link',
+	'BASKET_ACTIONS_ID' => $mainId.'_basket_actions',
+	'NOT_AVAILABLE_MESS' => $mainId.'_not_avail',
+	'COMPARE_LINK' => $mainId.'_compare_link',
+	'TREE_ID' => $mainId.'_skudiv',
+	'DISPLAY_PROP_DIV' => $mainId.'_sku_prop',
+	'DISPLAY_MAIN_PROP_DIV' => $mainId.'_main_sku_prop',
+	'OFFER_GROUP' => $mainId.'_set_group_',
+	'BASKET_PROP_DIV' => $mainId.'_basket_prop',
+	'SUBSCRIBE_LINK' => $mainId.'_subscribe',
+	'TABS_ID' => $mainId.'_tabs',
+	'TAB_CONTAINERS_ID' => $mainId.'_tab_containers',
+	'SMALL_CARD_PANEL_ID' => $mainId.'_small_card_panel',
+	'TABS_PANEL_ID' => $mainId.'_tabs_panel'
+);
+
 ?>
 <!--SECTION PRODUCT PAGE CONTENT START-->
 <section class="product_page_content_wrapper">
@@ -99,15 +135,6 @@ define( 'MAX_PRODUCT_SLIDE', 5);
                         <?endforeach;?>
                         </div>
                     </div>
-                    <div class="offers-hidden" id="offers-hidden" style="display: none">
-                        <?foreach( $arResult["OFFERS"] as $arOffer ):?>
-                            <?if( $arOffer["PRODUCT"]["AVAILABLE"] === "N" ) continue;?>
-                            <div class="item" data-id="<?=$arOffer['ID']?>">
-                                <span class="price"><?=$arOffer['ITEM_PRICES'][0]['PRINT_PRICE']?></span>
-                                <span class="quantity"><?=$arOffer['PRODUCT']['QUANTITY']?></span>
-                            </div>
-                        <?endforeach;?>
-                    </div>
                     <?endif;?>
                     <div class="qty_wrapper">
                         <div class="qty">
@@ -117,8 +144,8 @@ define( 'MAX_PRODUCT_SLIDE', 5);
                         </div>
 
                         <div class="btn_wrapper">
-                            <button class="btn">В корзину</button>
-                            <button class="btn grey">Купить в 1 клик</button>
+                            <a class="btn to-cart" href="javascript:void(0);" id="<?=$itemIds['ADD_BASKET_LINK']?>"><?=$arParams['MESS_BTN_ADD_TO_BASKET']?></a>
+                            <button class="btn grey buy">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>
@@ -173,5 +200,76 @@ define( 'MAX_PRODUCT_SLIDE', 5);
     </div>
 </section>
 <!--SECTION PRODUCT PAGE DESCRIPTION END-->
+
+<?
+$jsParams = array(
+    'CONFIG' => array(
+        'USE_CATALOG' => $arResult['CATALOG'],
+        'SHOW_QUANTITY' => $arParams['USE_PRODUCT_QUANTITY'],
+        'SHOW_PRICE' => true,
+        'SHOW_DISCOUNT_PERCENT' => $arParams['SHOW_DISCOUNT_PERCENT'] === 'Y',
+        'SHOW_OLD_PRICE' => $arParams['SHOW_OLD_PRICE'] === 'Y',
+        'USE_PRICE_COUNT' => $arParams['USE_PRICE_COUNT'],
+        'DISPLAY_COMPARE' => $arParams['DISPLAY_COMPARE'],
+        'SHOW_SKU_PROPS' => $arResult['SHOW_OFFERS_PROPS'],
+        'OFFER_GROUP' => $arResult['OFFER_GROUP'],
+        'MAIN_PICTURE_MODE' => $arParams['DETAIL_PICTURE_MODE'],
+        'ADD_TO_BASKET_ACTION' => $arParams['ADD_TO_BASKET_ACTION'],
+        'SHOW_CLOSE_POPUP' => $arParams['SHOW_CLOSE_POPUP'] === 'Y',
+        'SHOW_MAX_QUANTITY' => $arParams['SHOW_MAX_QUANTITY'],
+        'RELATIVE_QUANTITY_FACTOR' => $arParams['RELATIVE_QUANTITY_FACTOR'],
+        'TEMPLATE_THEME' => $arParams['TEMPLATE_THEME'],
+        'USE_STICKERS' => true,
+        'USE_SUBSCRIBE' => $showSubscribe,
+        'SHOW_SLIDER' => $arParams['SHOW_SLIDER'],
+        'SLIDER_INTERVAL' => $arParams['SLIDER_INTERVAL'],
+        'ALT' => $alt,
+        'TITLE' => $title,
+        'MAGNIFIER_ZOOM_PERCENT' => 200,
+        'USE_ENHANCED_ECOMMERCE' => $arParams['USE_ENHANCED_ECOMMERCE'],
+        'DATA_LAYER_NAME' => $arParams['DATA_LAYER_NAME'],
+        'BRAND_PROPERTY' => !empty($arResult['DISPLAY_PROPERTIES'][$arParams['BRAND_PROPERTY']])
+            ? $arResult['DISPLAY_PROPERTIES'][$arParams['BRAND_PROPERTY']]['DISPLAY_VALUE']
+            : null
+    ),
+    'PRODUCT_TYPE' => $arResult['PRODUCT']['TYPE'],
+    'VISUAL' => $itemIds,
+    'DEFAULT_PICTURE' => array(
+        'PREVIEW_PICTURE' => $arResult['DEFAULT_PICTURE'],
+        'DETAIL_PICTURE' => $arResult['DEFAULT_PICTURE']
+    ),
+    'PRODUCT' => array(
+        'ID' => $arResult['ID'],
+        'ACTIVE' => $arResult['ACTIVE'],
+        'NAME' => $arResult['~NAME'],
+        'CATEGORY' => $arResult['CATEGORY_PATH']
+    ),
+    'BASKET' => array(
+        'QUANTITY' => $arParams['PRODUCT_QUANTITY_VARIABLE'],
+        'BASKET_URL' => $arParams['BASKET_URL'],
+        'SKU_PROPS' => $arResult['OFFERS_PROP_CODES'],
+        'ADD_URL_TEMPLATE' => $arResult['~ADD_URL_TEMPLATE'],
+        'BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE']
+    ),
+    'OFFER_SELECTED' => $arResult['OFFERS_SELECTED'],
+    'TREE_PROPS' => $skuProps
+);
+
+$jsParams['OFFERS'] = array();
+foreach( $arResult["OFFERS"] as $arOffer ):
+    if( $arOffer["PRODUCT"]["AVAILABLE"] === "N" ) continue;
+
+    $jsParams['OFFERS'][ $arOffer['ID'] ] = array(
+
+        'PRINT_PRICE'   => $arOffer['ITEM_PRICES'][0]['PRINT_PRICE'],
+        'QUANTITY'      => $arOffer['PRODUCT']['QUANTITY']
+    );
+
+endforeach;
+?>
+<script>
+    var catalogElement = new CatalogElement(<?=CUtil::PhpToJSObject($jsParams, false, true)?>);
+    catalogElement.logParams();
+</script>
 
 <pre><?=var_dump($arResult)?></pre>
