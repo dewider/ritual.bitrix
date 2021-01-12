@@ -35,6 +35,7 @@ jQuery(function() {
     });
 
     // Catalog page
+    /*
     (() => {
         let $catalogProducts = jQuery('#catalog-products'),
             $catalogPaginator = jQuery('#catalog-paginator'),
@@ -115,6 +116,7 @@ jQuery(function() {
 
         renderCatalogProducts();
     })();
+    */
 
     // Contacts page
     (() => {

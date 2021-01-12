@@ -28,14 +28,14 @@ use \Bitrix\Main\Localization\Loc;
     </a>
     <h2><?=$productTitle?></h2>
     <div class="descr"><?=$item['PREVIEW_TEXT'];?></div>
-    <div class="price">
+    <div class="price product-price" data-product-id="<?=$item['ID']?>">
         <?=$price['PRINT_RATIO_PRICE'];?>
     </div>
     <div class="invisibly">
 		<?if( $item['OFFERS'] ):?>
         <div class="size_wrapper">
             <h6><?$item["PROPERTIES"]["offers_title"]["VALUE"];?>.</h6>
-            <div class="size">
+            <div class="size" data-product-id="<?=$item['ID']?>">
 
 				<?foreach( getOffersVar( $item ) as $offer ):?>
                 <div
@@ -50,14 +50,14 @@ use \Bitrix\Main\Localization\Loc;
         </div>
 		<?endif;?>
         <div class="qty_wrapper">
-            <div class="qty">
+            <div class="qty" data-product-id="<?=$item['ID']?>">
                 <input type="number" value="1" step="1" min="1">
                 <button class="up"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
                 <button class="down"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
             </div>
 
             <div class="btn_wrapper">
-                <button class="btn">В корзину</button>
+                <button class="btn to-cart" data-product-id="<?=$item['ID']?>">В корзину</button>
             </div>
         </div>
     </div>

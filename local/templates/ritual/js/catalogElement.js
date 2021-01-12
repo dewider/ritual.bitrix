@@ -1,195 +1,22 @@
-class CatalogElement {
-
-    constructor(arParams, rootElement = document) {
-        if (arParams) {
-            this.params = arParams;
-        } else return;
-
-        this.product = {};
-        this.product.id = parseInt(this.params.PRODUCT.ID, 10);
-
-        this.qtyElement = rootElement.querySelector('.qty_wrapper input[type="number"]');
-        this.toCartButtonElement = rootElement.querySelector('.btn_wrapper .to-cart');
-        this.buyButtonElement = rootElement.querySelector('.btn_wrapper .buy');
-
-        this.hasOffers = false;
-        if (this.params.OFFERS) {
-            this.offers = this.params.OFFERS;
-            this.hasOffers = true;
-        }
-        this.currentOfferId = undefined;
-
-        this.initToCartButton();
-        this.initBuyButton();
-    }
-
-    /**
-     * from .default
-     */
-    initBasketUrl(buy = false) {
-
-        if(buy){
-
-            if (this.params.BASKET.BUY_URL_TEMPLATE) {
-
-				this.basketUrl = this.params.BASKET.BUY_URL_TEMPLATE;
-            }
-            
-        } else {
-
-            if (this.params.BASKET.ADD_URL_TEMPLATE) {
-                
-                this.basketUrl = this.params.BASKET.ADD_URL_TEMPLATE;
-            }
-        }
-
-        let productId = this.hasOffers ? this.currentOfferId : this.product.id.toString();
-        let qty = this.getQty();
-        this.basketUrl = this.basketUrl.replace('#ID#', productId);
-
-        this.basketParams = {
-            'ajax_basket': 'Y',
-            'quantity': qty
-        };
-    }
-
-    /**
-     * from .default
-     */
-    initPopupWindow() {
-        if (this.obPopupWin)
-            return;
-
-        this.obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
-            autoHide: false,
-            offsetLeft: 0,
-            offsetTop: 0,
-            overlay: true,
-            closeByEsc: true,
-            titleBar: true,
-            closeIcon: true,
-            contentColor: 'white',
-            className: "qwe"
-        });
-    }
-
-    getQty() {
-        return this.qtyElement.value;
-    }
-
-    setOffer(id) {
-        if (id) this.currentOfferId = id;
-        return this.getOffer(this.currentOfferId);
-    }
-
-    getOffer(id) {
-        return id && this.offers[id] ? this.offers[id] : false;
-    }
-
-    initToCartButton() {
-        this.toCartButtonElement.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            if (this.hasOffers || !this.currentOfferId) {
-
-                this.initPopupWindow();
-
-                var popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
-                    + "Не выбрано торговое предложение "
-                    + '</p></div>';
-                this.obPopupWin.setContent(popupContent);
-                this.obPopupWin.show();
-                return;
-
-            } else {
-                this.toCart();
-            }
-
-        });
-    }
-
-    toCart() {
-        this.initBasketUrl();
-
-        BX.ajax({
-            method: 'POST',
-            dataType: 'json',
-            url: this.basketUrl,
-            data: this.basketParams,
-            onsuccess: BX.proxy(this.toCartResultHandler, this)
-        });
-    }
-
-    toCartResultHandler(arResult) {
-        if (arResult.STATUS === 'OK') {
-            BX.onCustomEvent('OnBasketChange');
-        }
-    }
-
-    initBuyButton() {
-        this.buyButtonElement.addEventListener('click', (e) => {
-            if (this.hasOffers && !this.currentOfferId) {
-
-                this.initPopupWindow();
-
-                var popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
-                    + "Не выбрано торговое предложение "
-                    + '</p></div>';
-                this.obPopupWin.setContent(popupContent);
-                this.obPopupWin.show();
-                return;
-
-            } else {
-                this.buy();
-            }
-        });
-    }
-
-    buy() {
-        this.initBasketUrl(true);
-
-        BX.ajax({
-            method: 'POST',
-            dataType: 'json',
-            url: this.basketUrl,
-            data: this.basketParams,
-            onsuccess: BX.proxy(this.buyResultHandler, this)
-        });
-    }
-
-    buyResultHandler(arResult){
-        if (arResult.STATUS === 'OK') {
-            BX.onCustomEvent('OnBasketChange');
-            this.redirectToCart();
-        }
-    }
-
-    redirectToCart(){
-        if( this.params.BASKET.BASKET_URL )
-        location.href = this.params.BASKET.BASKET_URL;
-    }
-
-    logParams() {
-        console.log(this.params);
-    }
-}
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
     jQuery(document).on('click', '.size_wrapper .size .size_item', function (e) {
         let $this = jQuery(this);
-        let $wrap = $this.closest('.size_wrapper');
-        $wrap.find('.size .size_item.active').removeClass('active');
+        let $sizeElement = $this.closest('.size');
+        $sizeElement.find('.size_item.active').removeClass('active');
         $this.addClass('active');
-        let id = $wrap.data('product-id');
 
         let offerId = $this.data('id');
-        let offer = catalogElements[id].setOffer(offerId);
+        $sizeElement.attr("data-current-id", offerId);
 
-        $('.content_item .product-price').html(offer.PRINT_PRICE);
-        $qty = $('.qty input[type="number"]');
-        $qty.prop('max', offer.QUANTITY);
-        $qty.val(Math.min($qty.val(), offer.QUANTITY));
+        let productId = $sizeElement.data('product-id');
+
+        let $qty = $('.qty[data-product-id="'+productId+'"] input[type="number"]');
+        $qty.prop('max', $this.data('qty'));
+        $qty.val(Math.min($qty.val(), $this.data('qty')));
+
+        $('.product-price[data-product-id="'+productId+'"]').html($this.data('price'));
     });
 
     jQuery(document).on('click', '.qty .up', function (e) {
@@ -213,4 +40,142 @@ document.addEventListener("DOMContentLoaded", function (e) {
         $input.val(Math.max(res, 1));
     });
 
+    function getQty(id) {
+        return $('.qty[data-product-id="'+id+'"] input[type="number"]').val();
+    }
+
+    function getBasketUrl(id, buy = false) {
+
+        if(buy){
+
+            if (PARAMS.BASKET.BUY_URL_TEMPLATE) {
+
+				var basketUrl = PARAMS.BASKET.BUY_URL_TEMPLATE;
+            }
+            
+        } else {
+
+            if (PARAMS.BASKET.ADD_URL_TEMPLATE) {
+                
+                var basketUrl = PARAMS.BASKET.ADD_URL_TEMPLATE;
+            }
+        }
+        return basketUrl.replace('#ID#', id);
+    }
+
+    $('.btn.to-cart').on('click', function(e){
+        e.preventDefault();
+
+        let $this = jQuery(this);
+        let productId = $this.data('product-id');
+        let $sizeElement = $('.size[data-product-id="'+productId+'"]');
+        let currentOfferId = $sizeElement.data('current-id');
+
+        console.log()
+
+        if ($sizeElement.length > 0 && !currentOfferId) {
+
+            if (!obPopupWin){
+
+                var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
+                    autoHide: false,
+                    offsetLeft: 0,
+                    offsetTop: 0,
+                    overlay: true,
+                    closeByEsc: true,
+                    titleBar: true,
+                    closeIcon: true,
+                    contentColor: 'white',
+                    className: "popup"
+                });
+            } 
+
+            var popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
+                + "Не выбрано торговое предложение "
+                + '</p></div>';
+            obPopupWin.setContent(popupContent);
+            obPopupWin.show();
+            return;
+
+        } else {
+            let itemId = currentOfferId ? currentOfferId : productId;
+            let basketUrl = getBasketUrl(itemId);
+
+            let qty = getQty(productId);
+            let basketParams = {
+                'ajax_basket': 'Y',
+                'quantity': qty
+            };
+
+            BX.ajax({
+                method: 'POST',
+                dataType: 'json',
+                url: basketUrl,
+                data: basketParams,
+                onsuccess: BX.proxy(function (arResult) {
+                    if (arResult.STATUS === 'OK') {
+                        BX.onCustomEvent('OnBasketChange');
+                    }
+                }, this)
+            });
+        }
+    });
+
+    $('.btn.buy').on('click', function(e){
+        e.preventDefault();
+
+        let $this = jQuery(this);
+        let productId = $this.data('product-id');
+        let $sizeElement = $('.size[data-product-id="'+productId+'"]');
+        let currentOfferId = $sizeElement.data('current-id');
+
+        if ($sizeElement && !currentOfferId) {
+
+            if (!obPopupWin){
+
+                var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
+                    autoHide: false,
+                    offsetLeft: 0,
+                    offsetTop: 0,
+                    overlay: true,
+                    closeByEsc: true,
+                    titleBar: true,
+                    closeIcon: true,
+                    contentColor: 'white',
+                    className: "popup"
+                });
+            } 
+
+            var popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
+                + "Не выбрано торговое предложение "
+                + '</p></div>';
+            obPopupWin.setContent(popupContent);
+            obPopupWin.show();
+            return;
+
+        } else {
+            let itemId = currentOfferId ? currentOfferId : productId;
+            let basketUrl = getBasketUrl(itemId, true);
+
+            let qty = getQty(productId);
+            let basketParams = {
+                'ajax_basket': 'Y',
+                'quantity': qty
+            };
+
+            BX.ajax({
+                method: 'POST',
+                dataType: 'json',
+                url: basketUrl,
+                data: basketParams,
+                onsuccess: BX.proxy(function (arResult) {
+                    if (arResult.STATUS === 'OK') {
+                        BX.onCustomEvent('OnBasketChange');
+                        if( PARAMS.BASKET.BASKET_URL )
+                            location.href = PARAMS.BASKET.BASKET_URL;
+                    }
+                }, this)
+            });
+        }
+    });
 });

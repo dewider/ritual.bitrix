@@ -22,7 +22,7 @@ function getOffersVar( $item ){
         array_push( $res, array(
             "ID"    => $offer["ID"],
             "TITLE" => $title,
-            "PRICE" => $offer["ITEM_PRICES"][ $item["ITEM_PRICE_SELECTED"] ]["PRINT_RATIO_PRICE"],
+            "PRICE" => $offer["ITEM_PRICES"][ $offer["ITEM_PRICE_SELECTED"] ]["PRINT_PRICE"],
             "QTY"   => $qty
         ));
     }

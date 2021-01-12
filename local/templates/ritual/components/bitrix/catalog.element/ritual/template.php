@@ -67,7 +67,7 @@ $this->addExternalJS("/local/templates/ritual/js/catalogElement.js");
                             <?=( $arResult['PRODUCT']['AVAILABLE'] == 'Y' ? "есть в наличии" : "нет в наличии");?>
                         </div>
                     </div>
-                    <div class="price product-price">
+                    <div class="price product-price" data-product-id="<?=$arResult['ID']?>">
                         <?=$arResult["PRINT_MIN_PRICE"];?>
                     </div>
                     <ul class="features">
@@ -86,12 +86,12 @@ $this->addExternalJS("/local/templates/ritual/js/catalogElement.js");
                     <?=$arResult['DETAIL_TEXT'];?>
                     </p>
                     <?if( CCatalogSKU::IsExistOffers( $arResult['ID'] )): ?>
-                    <div class="size_wrapper" data-product-id="<?=$arResult['ID']?>">
+                    <div class="size_wrapper">
                         <h6><?=$arResult["PROPERTIES"]["offers_title"]["VALUE"]?></h6>
-                        <div class="size">
+                        <div class="size" data-product-id="<?=$arResult['ID']?>">
                         <?foreach( getOffersVar( $arResult ) as $arOffer ):?>
                             <?if( $arOffer["PRODUCT"]["AVAILABLE"] === "N" ) continue;?>
-                            <div class="size_item" data-id="<?=$arOffer['ID']?>">
+                            <div class="size_item" data-id="<?=$arOffer['ID']?>" data-price="<?=$arOffer['PRICE']?>" data-qty="<?=$arOffer['QTY']?>">
                                 <?=$arOffer['TITLE']?>
                             </div>
                         <?endforeach;?>
@@ -106,8 +106,8 @@ $this->addExternalJS("/local/templates/ritual/js/catalogElement.js");
                         </div>
 
                         <div class="btn_wrapper">
-                            <a class="btn to-cart" href="javascript:void(0);"><?=$arParams['MESS_BTN_ADD_TO_BASKET']?></a>
-                            <button class="btn grey buy">Купить в 1 клик</button>
+                            <a class="btn to-cart" data-product-id="<?=$arResult['ID']?>" href="javascript:void(0);"><?=$arParams['MESS_BTN_ADD_TO_BASKET']?></a>
+                            <button class="btn grey buy" data-product-id="<?=$arResult['ID']?>">Купить в 1 клик</button>
                         </div>
                     </div>
                 </div>
@@ -165,28 +165,14 @@ $this->addExternalJS("/local/templates/ritual/js/catalogElement.js");
 
 <?
 $jsParams = array(
-    'PRODUCT' => array(
-        'ID' => $arResult['ID'],
-    ),
+
     'BASKET' => array(
+        'BASKET_URL' => $arParams['BASKET_URL'],
         'ADD_URL_TEMPLATE' => $arResult['~ADD_URL_TEMPLATE'],
         'BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE']
     )
 );
-
-$jsParams['OFFERS'] = array();
-foreach( $arResult["OFFERS"] as $arOffer ):
-    if( $arOffer["PRODUCT"]["AVAILABLE"] === "N" ) continue;
-
-    $jsParams['OFFERS'][ $arOffer['ID'] ] = array(
-
-        'PRINT_PRICE'   => $arOffer['ITEM_PRICES'][ $arOffer["ITEM_PRICE_SELECTED"] ]['PRINT_PRICE'],
-        'QUANTITY'      => $arOffer['PRODUCT']['QUANTITY']
-    );
-
-endforeach;
 ?>
 <script>
-    var catalogElements = Array;
-    catalogElements[<?=$arResult['ID']?>] = new CatalogElement(<?=CUtil::PhpToJSObject($jsParams, false, true)?>);
+    var PARAMS = <?=CUtil::PhpToJSObject($jsParams, false, true)?>
 </script>

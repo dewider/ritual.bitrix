@@ -20,6 +20,8 @@ use \Bitrix\Main\Localization\Loc;
  * |	<!-- component-end -->
  */
 
+$this->addExternalJS("/local/templates/ritual/js/catalogElement.js");
+
 $this->setFrameMode(true);
 
 $generalParams = array(
@@ -97,3 +99,17 @@ $generalParams = array(
 	<!-- items-container -->
 </ul>
 <ul id="catalog-paginator"></ul>
+
+<?
+$jsParams = array(
+
+    'BASKET' => array(
+        'BASKET_URL' => $arParams['BASKET_URL'],
+        'ADD_URL_TEMPLATE' => $arResult['~ADD_URL_TEMPLATE'],
+        'BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE']
+    )
+);
+?>
+<script>
+    var PARAMS = <?=CUtil::PhpToJSObject($jsParams, false, true)?>
+</script>
