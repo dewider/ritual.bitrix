@@ -107,7 +107,7 @@ $this->addExternalJS("/local/templates/ritual/js/catalogElement.js");
 
                         <div class="btn_wrapper">
                             <a class="btn to-cart" data-product-id="<?=$arResult['ID']?>" href="javascript:void(0);"><?=$arParams['MESS_BTN_ADD_TO_BASKET']?></a>
-                            <button class="btn grey buy" data-product-id="<?=$arResult['ID']?>">Купить в 1 клик</button>
+                            <button class="btn grey buy" data-product-id="<?=$arResult['ID']?>"><?=$arParams['MESS_BTN_BUY']?></button>
                         </div>
                     </div>
                 </div>

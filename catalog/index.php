@@ -121,7 +121,7 @@ $APPLICATION->SetTitle("");
 		"MAIN_TITLE" => "Наличие на складах",
 		"MESSAGE_404" => "",
 		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
-		"MESS_BTN_BUY" => "Купить",
+		"MESS_BTN_BUY" => "Купить в 1 клик",
 		"MESS_BTN_COMPARE" => "Сравнение",
 		"MESS_BTN_DETAIL" => "Подробнее",
 		"MESS_BTN_SUBSCRIBE" => "Подписаться",

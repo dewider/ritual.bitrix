@@ -57,14 +57,8 @@ use \Bitrix\Main\Localization\Loc;
             </div>
 
             <div class="btn_wrapper">
-                <button class="btn to-cart" data-product-id="<?=$item['ID']?>">В корзину</button>
+                <button class="btn to-cart" data-product-id="<?=$item['ID']?>"><?=$arParams['MESS_BTN_ADD_TO_BASKET']?></button>
             </div>
         </div>
     </div>
 </li>
-
-<?
-//define('DEBUG', true);
-if( defined('DEBUG')):?>
-<pre><?=var_dump($item);?></pre>
-<?endif;?>
