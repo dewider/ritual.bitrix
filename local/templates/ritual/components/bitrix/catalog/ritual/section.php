@@ -80,68 +80,39 @@ if ($isFilter)
     );?>
         <h2><?=$arResult["SECTION_TITLE"]?></h2>
         <div class="catalog_page_content">
-            <div class="content_item">
-                <h4>Категории</h4>
-                <ul class="categories">
-                    <li><a href="#">Искусственные</a></li>
-                    <li><a href="#" class="active">Из живых цветов</a></li>
-                    <li><a href="#">Корзины искусственные</a></li>
-                    <li><a href="#">Траурные композиции</a></li>
-                    <li><a href="#"> Ленты на венок</a></li>
-                </ul>
-
-                <div class="form_wrapper">
-                    <form action="" method="get" id="filter-form">
-                        <div class="forma">
-
-                            <h4>Стоимость</h4>
-                            <div class="form_group_rage">
-                                <label for="filter-price-from">
-                                    <input type="hidden"  name="filter[price_from]" value="<?= isset($_GET['filter']['price_from']) ? $_GET['filter']['price_from'] : '0'; ?>">
-                                    <input type="text"
-                                           id="filter-price-from"
-                                           value="<?= isset($_GET['filter']['price_from']) ? $_GET['filter']['price_from'] : ''; ?>">
-                                </label>
-
-                                <span>-</span>
-                                <label for="filter-price-to">
-                                    <input type="hidden"  name="filter[price_to]" value="<?= isset($_GET['filter']['price_to']) ? $_GET['filter']['price_to'] : '50000'; ?>">
-                                    <input type="text"
-                                           id="filter-price-to"
-                                           value="<?= isset($_GET['filter']['price_to']) ? $_GET['filter']['price_to'] : ''; ?>">
-                                </label>
-
-                            </div>
-
-                            <div id="price-range"></div>
-
-                            <h4>Высота</h4>
-
-                            <?php foreach ($filterSizes as $filterSize): ?>
-                                <?php
-                                $isChecked = \in_array($filterSize, $requestFilterSizes);
-                                ?>
-                                <div class="form_group_checkbox">
-                                    <input type="checkbox"
-                                           id="filter-size-<?= $filterSize; ?>-input"
-                                           name="filter[sizes][]"
-                                           value="<?= $filterSize; ?>"
-                                        <?= $isChecked ? 'checked' : ''; ?>>
-                                    <label for="filter-size-<?= $filterSize; ?>-input">
-                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                        <?= $filterSize; ?>см
-                                    </label>
-                                </div>
-                            <?php endforeach; ?>
-
-                            <div class="btn_form_wrapper">
-                                <button class="btn" type="submit">Показать</button>
-                                <button class="btn grey" type="reset">Сбросить</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+		<?
+		$APPLICATION->IncludeComponent(
+			"bitrix:catalog.smart.filter",
+			"ritual",
+			array(
+				"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+				"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+				"SECTION_ID" => $arCurSection['ID'],
+				"FILTER_NAME" => $arParams["FILTER_NAME"],
+				"PRICE_CODE" => $arParams["~PRICE_CODE"],
+				"CACHE_TYPE" => $arParams["CACHE_TYPE"],
+				"CACHE_TIME" => $arParams["CACHE_TIME"],
+				"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+				"SAVE_IN_SESSION" => "N",
+				"FILTER_VIEW_MODE" => $arParams["FILTER_VIEW_MODE"],
+				"XML_EXPORT" => "N",
+				"SECTION_TITLE" => "NAME",
+				"SECTION_DESCRIPTION" => "DESCRIPTION",
+				'HIDE_NOT_AVAILABLE' => "Y",
+				"TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"],
+				'CONVERT_CURRENCY' => $arParams['CONVERT_CURRENCY'],
+				'CURRENCY_ID' => $arParams['CURRENCY_ID'],
+				"SEF_MODE" => $arParams["SEF_MODE"],
+				"SEF_RULE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["smart_filter"],
+				"SMART_FILTER_PATH" => $arResult["VARIABLES"]["SMART_FILTER_PATH"],
+				"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+				"INSTANT_RELOAD" => $arParams["INSTANT_RELOAD"],
+				"POPUP_POSITION" => "right",
+			),
+			$component,
+			array('HIDE_ICONS' => 'Y')
+		);
+		?>
             <div class="content_item">
                 <select name="sort" form="filter-form">
                     <option value="">Сортировать по ...</option>

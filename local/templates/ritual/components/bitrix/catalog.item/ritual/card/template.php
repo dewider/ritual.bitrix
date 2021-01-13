@@ -34,7 +34,7 @@ use \Bitrix\Main\Localization\Loc;
     <div class="invisibly">
 		<?if( $item['OFFERS'] ):?>
         <div class="size_wrapper">
-            <h6><?$item["PROPERTIES"]["offers_title"]["VALUE"];?>.</h6>
+            <h6><?=$item["PROPERTIES"]["offers_title"]["VALUE"];?>.</h6>
             <div class="size" data-product-id="<?=$item['ID']?>">
 
 				<?foreach( getOffersVar( $item ) as $offer ):?>
