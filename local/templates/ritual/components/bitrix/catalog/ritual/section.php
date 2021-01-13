@@ -114,23 +114,54 @@ if ($isFilter)
 		);
 		?>
             <div class="content_item">
-                <select name="sort" form="filter-form">
-                    <option value="">Сортировать по ...</option>
-                    <option value="price" <?= (isset($_GET['sort']) ? $_GET['sort'] : null) === 'price' ? 'selected' : ''; ?>>Цена, от меньшего к большему</option>
-                    <option value="-price" <?= (isset($_GET['sort']) ? $_GET['sort'] : null) === '-price' ? 'selected' : ''; ?>>Цена, от большему к меньшего</option>
-                    <option value="name" <?= (isset($_GET['sort']) ? $_GET['sort'] : null) === 'name' ? 'selected' : ''; ?>>По алфавиту, от А до Я</option>
-                    <option value="-name" <?= (isset($_GET['sort']) ? $_GET['sort'] : null) === '-name' ? 'selected' : ''; ?>>По алфавиту, от Я до А</option>
-                </select>
+				<form id="sort-form" action="<?=$arResult["SECTION_PAGE_URL"]?>"></form>
+            	    <select name="sort" form="sort-form">
+            	        <option value="">Сортировать по ...</option>
+            	        <option value="price" <?= (isset($_GET['sort']) ? $_GET['sort'] : null) === 'price' ? 'selected' : ''; ?>>Цена, от меньшего к большему</option>
+            	        <option value="-price" <?= (isset($_GET['sort']) ? $_GET['sort'] : null) === '-price' ? 'selected' : ''; ?>>Цена, от большему к меньшего</option>
+            	        <option value="name" <?= (isset($_GET['sort']) ? $_GET['sort'] : null) === 'name' ? 'selected' : ''; ?>>По алфавиту, от А до Я</option>
+            	        <option value="-name" <?= (isset($_GET['sort']) ? $_GET['sort'] : null) === '-name' ? 'selected' : ''; ?>>По алфавиту, от Я до А</option>
+            	    </select>
+				</form>
                 
                 <?
+
+				if( isset($_GET['sort']) ){
+
+					switch( $_GET['sort'] ){
+
+						case 'price':
+							$sortField = "catalog_PRICE_1";
+							$sortOrder = "asc";
+							break;
+						case '-price':
+							$sortField = "catalog_PRICE_1";
+							$sortOrder = "desc";
+							break;
+						case 'name':
+							$sortField = "name";
+							$sortOrder = "asc";
+							break;
+						case '-name':
+							$sortField = "name";
+							$sortOrder = "desc";
+							break;
+
+					}
+
+				} else {
+					$sortField = $arParams["ELEMENT_SORT_FIELD"];
+					$sortOrder = $arParams["ELEMENT_SORT_ORDER"];
+				}
+
                 $intSectionID = $APPLICATION->IncludeComponent(
 				"bitrix:catalog.section",
 				"ritual",
 				array(
 					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-					"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
-					"ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
+					"ELEMENT_SORT_FIELD" => $sortField,
+					"ELEMENT_SORT_ORDER" => $sortOrder,
 					"ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
 					"ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
 					"PROPERTY_CODE" => (isset($arParams["LIST_PROPERTY_CODE"]) ? $arParams["LIST_PROPERTY_CODE"] : []),
