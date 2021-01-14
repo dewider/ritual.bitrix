@@ -64,6 +64,30 @@ $generalParams = array(
 	'MESS_BTN_ADD_TO_BASKET' => $arParams['~MESS_BTN_ADD_TO_BASKET'],
 	'MESS_NOT_AVAILABLE' => $arParams['~MESS_NOT_AVAILABLE']
 );
+
+if (!empty($arResult['NAV_RESULT']))
+{
+	$navParams =  array(
+		'NavPageCount' => $arResult['NAV_RESULT']->NavPageCount,
+		'NavPageNomer' => $arResult['NAV_RESULT']->NavPageNomer,
+		'NavNum' => $arResult['NAV_RESULT']->NavNum
+	);
+}
+else
+{
+	$navParams = array(
+		'NavPageCount' => 1,
+		'NavPageNomer' => 1,
+		'NavNum' => $this->randString()
+	);
+}
+
+if ($arParams['PAGE_ELEMENT_COUNT'] > 0 && $navParams['NavPageCount'] > 1)
+{
+	$showTopPager = $arParams['DISPLAY_TOP_PAGER'];
+	$showBottomPager = $arParams['DISPLAY_BOTTOM_PAGER'];
+	$showLazyLoad = $arParams['LAZY_LOAD'] === 'Y' && $navParams['NavPageNomer'] != $navParams['NavPageCount'];
+}
 ?>
 <ul id="catalog-products">
     <!-- items-container -->
@@ -98,7 +122,16 @@ $generalParams = array(
 	?>
 	<!-- items-container -->
 </ul>
-<ul id="catalog-paginator"></ul>
+
+<?if ($showBottomPager):?>
+
+	<div data-pagination-num="<?=$navParams['NavNum']?>">
+		<!-- pagination-container -->
+		<?=$arResult['NAV_STRING']?>
+		<!-- pagination-container -->
+	</div>
+
+<?endif;?>
 
 <?
 $jsParams = array(
