@@ -64,12 +64,11 @@ use Bitrix\Main\Page\Asset;
                 	),
                 	false
                 );?>
-                <div class="search_block">
-                    <button type="submit">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/icons/search.svg" alt="search">
-                    </button>
-                    <input type="search" placeholder="поиск по сайту...">
-                </div>
+                <?$APPLICATION->IncludeComponent("bitrix:search.form","",Array(
+                        "USE_SUGGEST" => "N",
+                        "PAGE" => "#SITE_DIR#search/index.php"
+                    )
+                );?> 
             </div>
             
         </div>

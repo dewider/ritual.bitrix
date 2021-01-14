@@ -231,46 +231,7 @@ body {
                 display: none;
             }
 
-            .search_block {
-                border-left: 1px solid #343434;
-                padding-left: 30px;
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: center;
-
-                input {
-                    display: block;
-                    background: #434343;
-                    border: none;
-                    outline: none;
-
-                    &::placeholder {
-                        color: #252525;
-                        font-size: 13px;
-                        font-weight: 600;
-                        font-style: normal;
-                        letter-spacing: 0.88px;
-                        line-height: 26.91px;
-                        text-align: left;
-                        text-transform: uppercase;
-                    }
-                }
-
-                button {
-                    border: none;
-                    outline: none;
-                    background: transparent;
-                    cursor: pointer;
-
-                    img {
-                        display: block;
-                        width: 24px;
-                        height: 24px;
-                        margin-right: 10px;
-                    }
-                }
-            }
+            
         }
     }
 
@@ -291,14 +252,6 @@ body {
                     .shopping_cart {
                         margin-left: 20px;
                     }
-                }
-            }
-        }
-
-        .main_menu_search_wrapper {
-            .main_menu_search_block {
-                .search_block {
-                    display: none;
                 }
             }
         }
@@ -329,15 +282,7 @@ body {
                     }
                 }
             }
-        }
-
-        .main_menu_search_wrapper {
-            .main_menu_search_block {
-                .search_block {
-                    display: none;
-                }
-            }
-        }
+        }        
     }
 
     @media (max-width: 780px) {
@@ -383,12 +328,6 @@ body {
                         pointer-events: auto;
                         opacity: 0.6;
                     }
-                }
-
-                .search_block {
-                    display: flex;
-                    padding: 10px 0;
-                    border-left: none;
                 }
             }
         }
