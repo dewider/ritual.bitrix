@@ -15,19 +15,16 @@ $this->setFrameMode(true);
 $this->addExternalJs( SITE_TEMPLATE_PATH . "/assest/wnumb/wNumb.min.js");
 $this->addExternalCss( SITE_TEMPLATE_PATH . "/assest/nouislider/nouislider.css");
 $this->addExternalJs( SITE_TEMPLATE_PATH . "/assest/nouislider/nouislider.min.js");
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Не работает бес классов bx-filter-parameters-box, bx-filter-container-modef
+и блока bx-filter-popup-result
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
 ?>
 
-<div class="content_item">
-    <h4>Категории</h4>
-    <ul class="categories">
-        <li><a href="#">Искусственные</a></li>
-        <li><a href="#" class="active">Из живых цветов</a></li>
-        <li><a href="#">Корзины искусственные</a></li>
-        <li><a href="#">Траурные композиции</a></li>
-        <li><a href="#"> Ленты на венок</a></li>
-    </ul>
-
-    <div class="form_wrapper">
+<div class="form_wrapper">
     <form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get" class="smartfilter">
             <div class="forma">
 
@@ -79,7 +76,8 @@ $this->addExternalJs( SITE_TEMPLATE_PATH . "/assest/nouislider/nouislider.min.js
 			?>
 
 				<?foreach( $arResult["ITEMS"] as $arItem ):
-					if( isset($arItem["PRICE"]) ){
+					if( empty($arItem["VALUES"])
+                    || isset($arItem["PRICE"]) ){
 							continue;
                     }
                 ?>
@@ -133,7 +131,6 @@ $this->addExternalJs( SITE_TEMPLATE_PATH . "/assest/nouislider/nouislider.min.js
                 
             </div>
         </form>
-    </div>
 </div>
 <script type="text/javascript">
 	var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>', '<?=CUtil::JSEscape($arParams["FILTER_VIEW_MODE"])?>', <?=CUtil::PhpToJSObject($arResult["JS_FILTER_PARAMS"])?>);

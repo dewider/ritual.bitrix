@@ -82,7 +82,7 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 		"SECTION_URL" => "",
 		"SECTION_USER_FIELDS" => array("",""),
 		"SHOW_PARENT_NAME" => "Y",
-		"TOP_DEPTH" => "2",
+		"TOP_DEPTH" => "1",
 		"VIEW_MODE" => "LINE"
 	)
 );?>
