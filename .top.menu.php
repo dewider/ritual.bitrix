@@ -23,14 +23,14 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Ритуальные услуги", 
-		"about/guaranty/", 
+		"services/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"О компании", 
-		"about/contacts/", 
+		"about/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -40,7 +40,7 @@ $aMenuLinks = Array(
 		"personal/", 
 		Array(), 
 		Array(), 
-		"\$USER->IsAuthorized()" 
+		"" 
 	),
 	Array(
 		"Цены", 
