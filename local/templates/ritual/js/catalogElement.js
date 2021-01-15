@@ -115,6 +115,27 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 onsuccess: BX.proxy(function (arResult) {
                     if (arResult.STATUS === 'OK') {
                         BX.onCustomEvent('OnBasketChange');
+
+                        if (!obPopupWin){
+
+                            var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
+                                autoHide: false,
+                                offsetLeft: 0,
+                                offsetTop: 0,
+                                overlay: true,
+                                closeByEsc: true,
+                                titleBar: true,
+                                closeIcon: true,
+                                contentColor: 'white',
+                                className: "popup"
+                            });
+                        } 
+            
+                        var popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
+                            + "Товар доюавлен в корзину "
+                            + '</p></div>';
+                        obPopupWin.setContent(popupContent);
+                        obPopupWin.show();
                     }
                 }, this)
             });
