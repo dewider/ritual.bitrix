@@ -16,7 +16,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Как купить", 
-		"about/", 
+		"about/howto/", 
 		Array(), 
 		Array(), 
 		"" 

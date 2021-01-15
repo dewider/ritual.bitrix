@@ -481,7 +481,7 @@ body {
 /*! SECTION MAIN PAGE SEO CONTENT END */
 /*! SECTION MAIN SERVICES PAGE BANNER START */
 .main_services_page_banner_wrapper {
-  background-image: url(../img/services-banner.png);
+  background-image: url(./img/services-banner.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 102px 0 124px; }
@@ -755,7 +755,7 @@ body {
 /*! SECTION MAIN SERVICES PAGE LIST END */
 /*! SECTION MAIN SERVICES PAGE DECOR START */
 .main_services_page_decor_wrapper {
-  background-image: url(../img/fon1.png);
+  background-image: url(./img/fon1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -785,7 +785,7 @@ body {
     .main_services_page_decor_wrapper .main_page_contract .contract_text:before {
       content: "";
       display: block;
-      background-image: url(../img/icons/cart.png);
+      background-image: url(./img/icons/cart.png);
       background-repeat: no-repeat;
       width: 58px;
       height: 55px;
@@ -1079,7 +1079,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-image: url(../img/icons/advan-bg.png);
+    background-image: url(./img/icons/advan-bg.png);
     background-repeat: no-repeat;
     background-size: 970px;
     background-position: 126px 58px;
@@ -1371,7 +1371,7 @@ body {
 /*! SECTION CEMETERIES PAGE CONTENT END */
 /*!SECTION REFERENCE INFO START */
 .reference_info_wrapper {
-  background-image: url(../img/fon.png);
+  background-image: url(./img/fon.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2101,7 +2101,7 @@ body {
 /*! SECTION FUNERAL ORGANIZATION PAGE INFO CONTENT END */
 /*! SECTION FUNERAL ORGANIZATION PAGE MORGUES LIST START */
 .funeral_organization_page_morgues_list_wrapper {
-  background-image: url(../img/org-fon.png);
+  background-image: url(./img/org-fon.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px 0; }
@@ -2317,7 +2317,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-image: url(../img/icons/s-bg.png);
+    background-image: url(./img/icons/s-bg.png);
     background-repeat: no-repeat;
     background-size: 1025px;
     background-position: 141px 87px;
@@ -2656,7 +2656,7 @@ body {
 /*! SECTION SERVICE PAGE TEXT CONTENT END */
 /*! SECTION SERVICE PAGE CONTRACT START */
 .service_page_contract_wrapper {
-  background-image: url(../img/fon.png);
+  background-image: url(./img/fon.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2690,7 +2690,7 @@ body {
         text-align: left; }
       .service_page_contract_wrapper .service_page_contract .contract_text:before {
         content: "";
-        background-image: url(../img/icons/serv-icon.png);
+        background-image: url(./img/icons/serv-icon.png);
         background-repeat: no-repeat;
         width: 68px;
         height: 68px;
@@ -3081,88 +3081,88 @@ body {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(53px, auto, 3px, 0); }
+    clip: rect(58px, auto, 78px, 0); }
   5% {
-    clip: rect(49px, auto, 43px, 0); }
+    clip: rect(49px, auto, 54px, 0); }
   10% {
-    clip: rect(20px, auto, 30px, 0); }
+    clip: rect(90px, auto, 64px, 0); }
   15% {
-    clip: rect(62px, auto, 8px, 0); }
+    clip: rect(36px, auto, 89px, 0); }
   20% {
-    clip: rect(52px, auto, 66px, 0); }
+    clip: rect(48px, auto, 6px, 0); }
   25% {
-    clip: rect(3px, auto, 61px, 0); }
+    clip: rect(53px, auto, 6px, 0); }
   30% {
-    clip: rect(84px, auto, 80px, 0); }
+    clip: rect(47px, auto, 10px, 0); }
   35% {
-    clip: rect(14px, auto, 84px, 0); }
+    clip: rect(43px, auto, 35px, 0); }
   40% {
-    clip: rect(46px, auto, 33px, 0); }
+    clip: rect(65px, auto, 79px, 0); }
   45% {
-    clip: rect(58px, auto, 43px, 0); }
+    clip: rect(26px, auto, 1px, 0); }
   50% {
-    clip: rect(16px, auto, 61px, 0); }
+    clip: rect(1px, auto, 31px, 0); }
   55% {
-    clip: rect(47px, auto, 17px, 0); }
+    clip: rect(5px, auto, 2px, 0); }
   60% {
-    clip: rect(90px, auto, 97px, 0); }
+    clip: rect(88px, auto, 57px, 0); }
   65% {
-    clip: rect(56px, auto, 54px, 0); }
+    clip: rect(16px, auto, 15px, 0); }
   70% {
-    clip: rect(43px, auto, 32px, 0); }
+    clip: rect(39px, auto, 1px, 0); }
   75% {
-    clip: rect(15px, auto, 11px, 0); }
+    clip: rect(43px, auto, 36px, 0); }
   80% {
-    clip: rect(24px, auto, 91px, 0); }
+    clip: rect(96px, auto, 69px, 0); }
   85% {
-    clip: rect(26px, auto, 20px, 0); }
+    clip: rect(18px, auto, 1px, 0); }
   90% {
-    clip: rect(79px, auto, 37px, 0); }
+    clip: rect(44px, auto, 26px, 0); }
   95% {
-    clip: rect(92px, auto, 64px, 0); }
+    clip: rect(43px, auto, 29px, 0); }
   100% {
-    clip: rect(33px, auto, 74px, 0); } }
+    clip: rect(4px, auto, 48px, 0); } }
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(32px, 9999px, 2px, 0); }
+    clip: rect(6px, 9999px, 25px, 0); }
   5% {
-    clip: rect(53px, 9999px, 96px, 0); }
+    clip: rect(62px, 9999px, 55px, 0); }
   10% {
-    clip: rect(12px, 9999px, 94px, 0); }
+    clip: rect(82px, 9999px, 39px, 0); }
   15% {
-    clip: rect(58px, 9999px, 69px, 0); }
+    clip: rect(37px, 9999px, 65px, 0); }
   20% {
-    clip: rect(71px, 9999px, 20px, 0); }
+    clip: rect(35px, 9999px, 77px, 0); }
   25% {
-    clip: rect(5px, 9999px, 81px, 0); }
+    clip: rect(44px, 9999px, 29px, 0); }
   30% {
-    clip: rect(87px, 9999px, 70px, 0); }
+    clip: rect(26px, 9999px, 31px, 0); }
   35% {
-    clip: rect(48px, 9999px, 17px, 0); }
+    clip: rect(31px, 9999px, 25px, 0); }
   40% {
-    clip: rect(25px, 9999px, 97px, 0); }
+    clip: rect(54px, 9999px, 29px, 0); }
   45% {
-    clip: rect(96px, 9999px, 11px, 0); }
+    clip: rect(35px, 9999px, 51px, 0); }
   50% {
-    clip: rect(5px, 9999px, 30px, 0); }
+    clip: rect(44px, 9999px, 51px, 0); }
   55% {
-    clip: rect(56px, 9999px, 92px, 0); }
+    clip: rect(23px, 9999px, 1px, 0); }
   60% {
-    clip: rect(53px, 9999px, 10px, 0); }
+    clip: rect(99px, 9999px, 88px, 0); }
   65% {
-    clip: rect(59px, 9999px, 16px, 0); }
+    clip: rect(13px, 9999px, 26px, 0); }
   70% {
-    clip: rect(90px, 9999px, 60px, 0); }
+    clip: rect(42px, 9999px, 98px, 0); }
   75% {
-    clip: rect(56px, 9999px, 84px, 0); }
+    clip: rect(57px, 9999px, 86px, 0); }
   80% {
-    clip: rect(57px, 9999px, 29px, 0); }
+    clip: rect(34px, 9999px, 31px, 0); }
   85% {
-    clip: rect(98px, 9999px, 1px, 0); }
+    clip: rect(25px, 9999px, 96px, 0); }
   90% {
-    clip: rect(66px, 9999px, 57px, 0); }
+    clip: rect(57px, 9999px, 60px, 0); }
   95% {
-    clip: rect(72px, 9999px, 34px, 0); }
+    clip: rect(9px, 9999px, 90px, 0); }
   100% {
-    clip: rect(56px, 9999px, 47px, 0); } }
+    clip: rect(20px, 9999px, 58px, 0); } }
