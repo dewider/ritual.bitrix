@@ -1,29 +1,110 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Задайте вопрос");
+$APPLICATION->SetTitle("Наши контакты");
+$APPLICATION->AddHeadScript("http://maps.api.2gis.ru/1.0");
+$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
 ?>
 
-	<p>
-		<b>Телефон:</b> 8 (495) 212 85 06<br>
-		<b>Адрес:</b> г. Москва, ул. 2-я Хуторская, д. 38
-	</p>
-	<div class="mb-2 embed-responsive embed-responsive-16by9">
-		<iframe class="embed-responsive-item" width="100%" height="490" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ru/maps?f=q&amp;source=s_q&amp;hl=ru&amp;geocode=&amp;q=%D0%B3.+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+%D1%83%D0%BB.+2-%D1%8F+%D0%A5%D1%83%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B4.+38%D0%90&amp;aq=&amp;sll=55,103&amp;sspn=90.84699,270.527344&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=2-%D1%8F+%D0%A5%D1%83%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+38,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+127287&amp;ll=55.805478,37.569551&amp;spn=0.023154,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
-	</div>
-	<div class="mb-4">
-		<small><a href="https://maps.google.ru/maps?f=q&amp;source=embed&amp;hl=ru&amp;geocode=&amp;q=%D0%B3.+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+%D1%83%D0%BB.+2-%D1%8F+%D0%A5%D1%83%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B4.+38%D0%90&amp;aq=&amp;sll=55,103&amp;sspn=90.84699,270.527344&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=2-%D1%8F+%D0%A5%D1%83%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+38,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+127287&amp;ll=55.805478,37.569551&amp;spn=0.023154,0.054932&amp;z=14&amp;iwloc=A" style="text-align:left">Просмотреть увеличенную карту</a></small>
-	</div>
-	<h2>Задать вопрос</h2>
+<!--SECTION CONTACTS PAGE CONTENT START-->
+<section class="contacts_content_wrapper">
+    <div class="container">
+		<?$APPLICATION->IncludeComponent(
+				"bitrix:breadcrumb",
+				"",
+			Array(),
+			false
+		);?>
+        <h2>НАШИ КОНТАКТЫ</h2>
+    </div>
+    <div class="contacts_content">
+        <div class="container">
+            <div class="map_contacts_wrapper">
+                <div class="map">
+                    <div id="myMapId" style="width:100%; height:100%"></div>
+                </div>
+                <div class="contacts">
+                    <h4>Email</h4>
+                    <p>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <a href="mailto:yourmail@gmail.com" class="active-mail">yourmail@gmail.com</a>
+                    </p>
+                    <div class="addresses">
+                        <h4>Адреса наших МФЦ</h4>
+                        <p>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            Москва, Госпитальная площадь, 3, стр. 16
+                        </p>
+                        <p>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            Москва, улица Гамалеи, дом 17
+                        </p>
+                        <p>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            Москва, улица Братиславская, дом 15, корп.1
+                        </p>
+                        <p>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            Москва, Пятницкое шоссе, 6 км
+                        </p>
+                    </div>
+                    <div class="phone_wrapper">
+                        <div class="phone">
+                            <a href="tel:+74951523333">+7 (495) 152 33 33</a>
+                        </div>
+                        <div class="work_time">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/icons/aroundtheclock-red.png" alt="phone">
+                            <p>
+                                Круглосуточная справочная
+                            </p>
+                        </div>
+                    </div>
+                    <button class="btn">Заказать обратный звонок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contacts_districts_wrapper">
+        <div class="container">
+            <div class="contacts_districts">
+                <div class="contacts_districts_item">
+                    <p>
+                        Для оперативного вызова ритуального агента,
+                        относящегося непосредственно к округу проживания
+                        покойного, либо месту нахождения его родственников,
+                        обращайтесь в окружные похоронные отделения
+                        нашей службы:
+                    </p>
+                    <div class="phone_wrapper">
+                        <div class="phone">
+                            <a href="tel:+74951523333">+7 (495) 152 33 33</a>
+                        </div>
+                        <div class="work_time">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/icons/aroundtheclock-red.png" alt="phone">
+                            <p>
+                                Круглосуточная справочная
+                            </p>
+                        </div>
+                    </div>
+                    <button class="btn">Заказать обратный звонок</button>
+                </div>
+                <div class="contacts_districts_item">
+                    <img src="<?=SITE_TEMPLATE_PATH?>/img/moscow_map.png" alt="map">
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<?$APPLICATION->IncludeComponent(
-		"bitrix:main.feedback",
-		"bootstrap_v4",
-		Array(
-			"EMAIL_TO" => "sale@nyuta.bx",
-			"EVENT_MESSAGE_ID" => array(),
-			"OK_TEXT" => "Спасибо, ваше сообщение принято.",
-			"REQUIRED_FIELDS" => array("NAME","EMAIL"),
-			"USE_CAPTCHA" => "Y"
-		)
-	);?>
+</section>
+<!--SECTION CONTACTS PAGE CONTENT START-->
+
+<?$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    Array(
+        "AREA_FILE_SHOW" => "sect", 
+        "AREA_FILE_SUFFIX" => "reference-info", 
+        "AREA_FILE_RECURSIVE" => "Y", 
+        "EDIT_TEMPLATE" => "standard.php" 
+    )
+);?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php")?>
