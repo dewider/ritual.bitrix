@@ -10,7 +10,6 @@
  * @var string $componentPath
  * @var string $templateFolder
  */
-
 define( 'MAX_PRODUCT_SLIDE', 5);
 
 $this->addExternalJS("/local/templates/ritual/js/catalogElement.js");
@@ -18,12 +17,12 @@ $this->addExternalJS("/local/templates/ritual/js/catalogElement.js");
 <!--SECTION PRODUCT PAGE CONTENT START-->
 <section class="product_page_content_wrapper">
     <div class="container">
-	<?$APPLICATION->IncludeComponent(
-		"bitrix:breadcrumb",
-		"",
-	Array(),
-	false
-    );?>
+	    <?$APPLICATION->IncludeComponent(
+	    	"bitrix:breadcrumb",
+	    	"",
+	    Array(),
+	    false
+        );?>
         <h2><?=$arResult["NAME"];?></h2>
     </div>
     <div class="product_page_content">

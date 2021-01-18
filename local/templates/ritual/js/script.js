@@ -43,16 +43,7 @@ jQuery(function() {
 
     let $body = jQuery('body');
 
-    jQuery('.select_wrapper .funeral_calculator').each(function() {
-        let $this = jQuery(this);
-
-        $this.select2({
-            minimumResultsForSearch: Infinity,
-            placeholder: 'Не выбрано',
-            dropdownParent: $this.closest('.select_wrapper'),
-            width: '100%'
-        });
-    });
+    
 
     // Catalog page
     /*
