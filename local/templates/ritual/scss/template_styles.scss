@@ -4584,3 +4584,13 @@ body {
         }
     }
 }
+
+//order page
+.bx-soa-pp{
+    .row{
+        display: flex;
+    }
+    &-company{
+        width: 127px;
+    }
+}

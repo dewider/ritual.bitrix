@@ -2,14 +2,14 @@
 $aMenuLinks = Array(
 	Array(
 		"Морги", 
-		"news/", 
+		"info/morgues", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Кладбища", 
-		"about/howto/", 
+		"info/graveyards", 
 		Array(), 
 		Array(), 
 		"" 

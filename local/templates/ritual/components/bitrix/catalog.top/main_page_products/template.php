@@ -40,14 +40,13 @@ if (!empty($arResult['ITEMS']))
                         </p>
                         <p class="price">
                             <?=$arResult['PRICE_LIST'][$arItem['ID']]["DISCOUNT_PRICE"];?>
-                            <i class="fa fa-rub" aria-hidden="true"></i>
                         </p>
                         <button class="btn">Узнать подробнее</button>
                     </a>
                 <?}?>
                 </div>
                 <div class="tab" id="tab2" style="display: none">
-                <?foreach ($arResult['RECOMMENDATION']['ITEMS'] as $key => $arItem) {?>
+                <?foreach ($arResult['RECOMMENDATIONS']['ITEMS'] as $key => $arItem) {?>
 
                     <a href="<?=$arItem['DETAIL_PAGE_URL'];?>" class="tab_item">
                         <img src="<?=$arItem['PREVIEW_PICTURE_URL']?>" alt="product">
@@ -56,8 +55,7 @@ if (!empty($arResult['ITEMS']))
                         <?=$arItem['PREVIEW_TEXT'];?>
                         </p>
                         <p class="price">
-                        <?=$arResult['PRICE_LIST'][$arItem['ID']]["DISCOUNT_PRICE"];?>
-                            <i class="fa fa-rub" aria-hidden="true"></i>
+                            <?=$arResult['RECOMMENDATIONS']['PRICE_LIST'][$arItem['ID']]["DISCOUNT_PRICE"];?>
                         </p>
                         <button class="btn">Узнать подробнее</button>
                     </a>
@@ -74,8 +72,7 @@ if (!empty($arResult['ITEMS']))
                         <?=$arItem['PREVIEW_TEXT'];?>
                         </p>
                         <p class="price">
-                        <?=$arResult['PRICE_LIST'][$arItem['ID']]["DISCOUNT_PRICE"];?>
-                            <i class="fa fa-rub" aria-hidden="true"></i>
+                            <?=$arResult['STOCK']['PRICE_LIST'][$arItem['ID']]["DISCOUNT_PRICE"];?>
                         </p>
                         <button class="btn">Узнать подробнее</button>
                     </a>

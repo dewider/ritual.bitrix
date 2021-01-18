@@ -70,7 +70,7 @@ $APPLICATION->SetTitle("Ритуальные услуги");
             );?>
             <div class="btn_wrapper">
                 <button class="btn">Вызов ритуального агента ОНЛАЙН</button>
-                <a href="/" class="btn grey">Перейти в наш интернет-магазин</a>
+                <a href="/catalog" class="btn grey">Перейти в наш интернет-магазин</a>
             </div>
         </div>
     </div>
@@ -157,7 +157,7 @@ $APPLICATION->SetTitle("Ритуальные услуги");
 			);?>
         </div>
             <div class="contract_content">
-                <a href="/calculator.php" class = "contract_item">
+                <a href="/calculator" class = "contract_item">
                     <div class="image_wrapper">
                         <img src="<?=SITE_TEMPLATE_PATH?>/img/icons/calculator.png" alt="icon">
                     </div>

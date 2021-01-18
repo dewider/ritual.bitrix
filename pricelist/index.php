@@ -154,7 +154,7 @@ $APPLICATION->SetTitle("Стоимость наших услуг");
                     </a>
                 </div>
             </div>
-            <a href="/calculator.php" class="btn">Рассчитать стоимость похорон</a>
+            <a href="/calculator" class="btn">Рассчитать стоимость похорон</a>
         </div>
     </div>
 

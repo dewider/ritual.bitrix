@@ -8,12 +8,12 @@
                 <div class="reference_info_list">
                     <div class="reference_info_item">
                         <img src="<?=SITE_TEMPLATE_PATH?>/img/icons/morgue.svg" alt="icon">
-                        <a href="/morgues.php">МОРГИ</a>
+                        <a href="/info/morgues">МОРГИ</a>
                     </div>
 
                     <div class="reference_info_item">
                         <img src="<?=SITE_TEMPLATE_PATH?>/img/icons/cemetery.svg" alt="icon">
-                        <a href="/cemeteries.php">Кладбища</a>
+                        <a href="/info/graveyards">Кладбища</a>
                     </div>
 
                     <div class="reference_info_item">

@@ -39,8 +39,8 @@ function getPriceList( $arProductIDs, &$arPriceList ){
             $arDiscount
         );
         $arPriceList[ $arPrice['PRODUCT_ID'] ] = array(
-            "PRICE"             => $arPrice["PRICE"],
-            "DISCOUNT_PRICE"    => $discountPrice
+            "PRICE"             => CurrencyFormat( $arPrice["PRICE"], $arPrice["CURRENCY"] ),
+            "DISCOUNT_PRICE"    => CurrencyFormat( $discountPrice, $arPrice["CURRENCY"] )
         );
     }
 }
@@ -53,11 +53,11 @@ function getSectionItems( $sectionCode, &$arItems){
         array(),
         array("SECTION_CODE" => $sectionCode),
         false,
-        false,
-        array("ID", "NAME", "DETAIL_PAGE_URL", "PREVIEW_PICTURE", "PREVIEW_TEXT")
+        array ("nTopCount" => 4),
+        array("ID", "NAME", "DETAIL_PAGE_URL", "PREVIEW_PICTURE", "PREVIEW_TEXT", "IBLOCK_ID", "LANG_DIR")
     );
     $IDs = array();
-    while ( $arItem = $dbItems->Fetch() ){
+    while ( $arItem = $dbItems->GetNext() ){
 
         array_push( $IDs, $arItem["ID"] );
         $arItem['PREVIEW_PICTURE_URL'] = CFile::GetPath( $arItem['PREVIEW_PICTURE'] );
@@ -77,8 +77,8 @@ $arResult['PRICE_LIST'] = array();
 getPriceList( $IDs, $arResult['PRICE_LIST'] );
 
 // получение рекомендуемых товаров
-$arResult['RECOMMENDATION']['ITEMS'] = array();
-$IDs = getSectionItems( "recommendation", $arResult['RECOMMENDATION']['ITEMS'] );
+$arResult['RECOMMENDATIONS']['ITEMS'] = array();
+$IDs = getSectionItems( "recommendation", $arResult['RECOMMENDATIONS']['ITEMS'] );
 
 $arResult['RECOMMENDATIONS']['PRICE_LIST'] = array();
 getPriceList( $IDs, $arResult['RECOMMENDATIONS']['PRICE_LIST'] );

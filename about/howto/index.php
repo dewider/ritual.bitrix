@@ -97,7 +97,7 @@ $APPLICATION->SetTitle("Организация похорон");
 			);?>
             </div>
             <div class="contract_content">
-                <a href="/calculator.php" class = "contract_item">
+                <a href="/calculator" class = "contract_item">
                     <div class="image_wrapper">
                         <img src="<?=SITE_TEMPLATE_PATH?>/img/icons/calculator.png" alt="icon">
                     </div>

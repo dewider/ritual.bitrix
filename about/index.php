@@ -35,7 +35,7 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
                 </ul>
                 <div class="btn_wrapper">
                     <button class="btn">Вызов ритуального агента ОНЛАЙН</button>
-                    <a href="/calculator.php" class="btn grey">Расчитать стоимость похорон</a>
+                    <a href="/calculator" class="btn grey">Расчитать стоимость похорон</a>
                 </div>
             </div>
             <div class="info_item">
