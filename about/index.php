@@ -123,156 +123,123 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
 
             <div class="prices_content_tabs">
                 <div class="tab" id="tab1">
-                    <ul class="features">
-                        <li><span>Апрелевка</span></li>
-                        <li><span>Балашиха</span></li>
-                        <li><span>Бронницы</span></li>
-                        <li><span>Верея</span></li>
-                        <li><span>Видное</span></li>
-                        <li><span>Волоколамск</span></li>
-                        <li><span>Воскресенск</span></li>
-                        <li><span>Высоководск</span></li>
-                        <li><span>Голицыно</span></li>
-                        <li><span>Дедовск</span></li>
-                        <li><span>Дмитров</span></li>
-                        <li><span>Долгопрудный</span></li>
-                        <li><span>Домодедово</span></li>
-                        <li><span>Домодедово</span></li>
-                        <li><span>Дрезна</span></li>
-                        <li><span>Дубна</span></li>
-                        <li><span>Егорьевск</span></li>
-                        <li><span>Железнодорожный</span></li>
-                        <li><span>Жуковский</span></li>
-                    </ul>
-                    <ul class="features">
-                        <li><span>Зарайск</span></li>
-                        <li><span>Звенигород</span></li>
-                        <li><span>Зеленоград</span></li>
-                        <li><span>Ивантеевка</span></li>
-                        <li><span>Истра</span></li>
-                        <li><span>Кашира</span></li>
-                        <li><span>Климовск</span></li>
-                        <li><span>Клин</span></li>
-                        <li><span>Коломна</span></li>
-                        <li><span>Конаково</span></li>
-                        <li><span>Королёв</span></li>
-                        <li><span>Красногорск</span></li>
-                        <li><span>Краснозаводск</span></li>
-                        <li><span>Краснознаменск</span></li>
-                        <li><span>Кубинка</span></li>
-                        <li><span>Куровское</span></li>
-                        <li><span>Ликино-Дулево</span></li>
-                        <li><span>Лобня</span></li>
-                        <li><span>Лосино-Петровский</span></li>
-                    </ul>
-                    <ul class="features">
-                        <li><span>Луховицы</span></li>
-                        <li><span>Лыткарино</span></li>
-                        <li><span>Люберцы</span></li>
-                        <li><span>Марьино</span></li>
-                        <li><span>Митино</span></li>
-                        <li><span>Можайск</span></li>
-                        <li><span>Московский</span></li>
-                        <li><span>Мытищи</span></li>
-                        <li><span>Наро-Фоминск</span></li>
-                        <li><span>Нахабино</span></li>
-                        <li><span>Ногинск</span></li>
-                        <li><span>Одинцово</span></li>
-                        <li><span>Ожерелье</span></li>
-                        <li><span>Озеры</span></li>
-                        <li><span>Орехово-Зуево</span></li>
-                        <li><span>Павловский-Посад</span></li>
-                        <li><span>Пересвет</span></li>
-                        <li><span>Петровский</span></li>
-                        <li><span>Пущино</span></li>
-                    </ul>
-                    <ul class="features">
-                        <li><span>Раменское</span></li>
-                        <li><span>Реутов</span></li>
-                        <li><span>Рошаль</span></li>
-                        <li><span>Руза</span></li>
-                        <li><span>Сергиев-Посад</span></li>
-                        <li><span>Серпухов</span></li>
-                        <li><span>Солнечногорск</span></li>
-                        <li><span>Старая Купавна</span></li>
-                        <li><span>Ступино</span></li>
-                        <li><span>Талдом</span></li>
-                        <li><span>Троицк</span></li>
-                        <li><span>Фрязино</span></li>
-                        <li><span>Химки</span></li>
-                        <li><span>Хотьково</span></li>
-                        <li><span>Черноголовка</span></li>
-                        <li><span>Чехов</span></li>
-                        <li><span>Шатура</span></li>
-                        <li><span>Щелково</span></li>
-                    </ul>
+                    <?$APPLICATION->IncludeComponent(
+                    	"bitrix:news.list",
+                    	"cities_list",
+                    	Array(
+                    		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    		"ADD_SECTIONS_CHAIN" => "Y",
+                    		"AJAX_MODE" => "N",
+                    		"AJAX_OPTION_ADDITIONAL" => "",
+                    		"AJAX_OPTION_HISTORY" => "N",
+                    		"AJAX_OPTION_JUMP" => "N",
+                    		"AJAX_OPTION_STYLE" => "Y",
+                    		"CACHE_FILTER" => "N",
+                    		"CACHE_GROUPS" => "Y",
+                    		"CACHE_TIME" => "36000000",
+                    		"CACHE_TYPE" => "A",
+                    		"CHECK_DATES" => "Y",
+                    		"DETAIL_URL" => "",
+                    		"DISPLAY_BOTTOM_PAGER" => "Y",
+                    		"DISPLAY_DATE" => "Y",
+                    		"DISPLAY_NAME" => "Y",
+                    		"DISPLAY_PICTURE" => "Y",
+                    		"DISPLAY_PREVIEW_TEXT" => "Y",
+                    		"DISPLAY_TOP_PAGER" => "N",
+                    		"FIELD_CODE" => array(0=>"",1=>"",),
+                    		"FILTER_NAME" => "",
+                    		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                    		"IBLOCK_ID" => "10",
+                    		"IBLOCK_TYPE" => "city_lists",
+                    		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                    		"INCLUDE_SUBSECTIONS" => "Y",
+                    		"MESSAGE_404" => "",
+                    		"NEWS_COUNT" => "20",
+                    		"PAGER_BASE_LINK_ENABLE" => "N",
+                    		"PAGER_DESC_NUMBERING" => "N",
+                    		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                    		"PAGER_SHOW_ALL" => "N",
+                    		"PAGER_SHOW_ALWAYS" => "N",
+                    		"PAGER_TEMPLATE" => ".default",
+                    		"PAGER_TITLE" => "Новости",
+                    		"PARENT_SECTION" => "",
+                    		"PARENT_SECTION_CODE" => "moscow_region",
+                    		"PREVIEW_TRUNCATE_LEN" => "",
+                    		"PROPERTY_CODE" => array(0=>"",1=>"",),
+                    		"SET_BROWSER_TITLE" => "Y",
+                    		"SET_LAST_MODIFIED" => "N",
+                    		"SET_META_DESCRIPTION" => "Y",
+                    		"SET_META_KEYWORDS" => "Y",
+                    		"SET_STATUS_404" => "N",
+                    		"SET_TITLE" => "N",
+                    		"SHOW_404" => "N",
+                    		"SORT_BY1" => "ACTIVE_FROM",
+                    		"SORT_BY2" => "SORT",
+                    		"SORT_ORDER1" => "DESC",
+                    		"SORT_ORDER2" => "ASC",
+                    		"STRICT_SECTION_CHECK" => "N"
+                    	)
+                    );?>
                 </div>
 
                 <div class="tab" id="tab2" style="display: none">
-                    <ul class="features">
-                        <li><span>Академический</span></li>
-                        <li><span>Алексеевский</span></li>
-                        <li><span>Алтуфьевский</span></li>
-                        <li><span>Арбат</span></li>
-                        <li><span>Аэропорт</span></li>
-                        <li><span>Бабушкинский</span></li>
-                        <li><span>Басманный</span></li>
-                        <li><span>Беговой</span></li>
-                        <li><span>Бескудниковский</span></li>
-                        <li><span>Бибирево</span></li>
-                        <li><span>Бирюлёво Восточное</span></li>
-                        <li><span>Бирюлёво Западное</span></li>
-                        <li><span>Богородское</span></li>
-                        <li><span>Братеево</span></li>
-                    </ul>
-                    <ul class="features">
-                        <li><span>Академический</span></li>
-                        <li><span>Алексеевский</span></li>
-                        <li><span>Алтуфьевский</span></li>
-                        <li><span>Арбат</span></li>
-                        <li><span>Аэропорт</span></li>
-                        <li><span>Бабушкинский</span></li>
-                        <li><span>Басманный</span></li>
-                        <li><span>Беговой</span></li>
-                        <li><span>Бескудниковский</span></li>
-                        <li><span>Бибирево</span></li>
-                        <li><span>Бирюлёво Восточное</span></li>
-                        <li><span>Бирюлёво Западное</span></li>
-                        <li><span>Богородское</span></li>
-                        <li><span>Братеево</span></li>
-                    </ul>
-                    <ul class="features">
-                        <li><span>Академический</span></li>
-                        <li><span>Алексеевский</span></li>
-                        <li><span>Алтуфьевский</span></li>
-                        <li><span>Арбат</span></li>
-                        <li><span>Аэропорт</span></li>
-                        <li><span>Бабушкинский</span></li>
-                        <li><span>Басманный</span></li>
-                        <li><span>Беговой</span></li>
-                        <li><span>Бескудниковский</span></li>
-                        <li><span>Бибирево</span></li>
-                        <li><span>Бирюлёво Восточное</span></li>
-                        <li><span>Бирюлёво Западное</span></li>
-                        <li><span>Богородское</span></li>
-                        <li><span>Братеево</span></li>
-                    </ul>
-                    <ul class="features">
-                        <li><span>Академический</span></li>
-                        <li><span>Алексеевский</span></li>
-                        <li><span>Алтуфьевский</span></li>
-                        <li><span>Арбат</span></li>
-                        <li><span>Аэропорт</span></li>
-                        <li><span>Бабушкинский</span></li>
-                        <li><span>Басманный</span></li>
-                        <li><span>Беговой</span></li>
-                        <li><span>Бескудниковский</span></li>
-                        <li><span>Бибирево</span></li>
-                        <li><span>Бирюлёво Восточное</span></li>
-                        <li><span>Бирюлёво Западное</span></li>
-                        <li><span>Богородское</span></li>
-                        <li><span>Братеево</span></li>
-                    </ul>
+                <?$APPLICATION->IncludeComponent(
+                    	"bitrix:news.list",
+                    	"cities_list",
+                    	Array(
+                    		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    		"ADD_SECTIONS_CHAIN" => "Y",
+                    		"AJAX_MODE" => "N",
+                    		"AJAX_OPTION_ADDITIONAL" => "",
+                    		"AJAX_OPTION_HISTORY" => "N",
+                    		"AJAX_OPTION_JUMP" => "N",
+                    		"AJAX_OPTION_STYLE" => "Y",
+                    		"CACHE_FILTER" => "N",
+                    		"CACHE_GROUPS" => "Y",
+                    		"CACHE_TIME" => "36000000",
+                    		"CACHE_TYPE" => "A",
+                    		"CHECK_DATES" => "Y",
+                    		"DETAIL_URL" => "",
+                    		"DISPLAY_BOTTOM_PAGER" => "Y",
+                    		"DISPLAY_DATE" => "Y",
+                    		"DISPLAY_NAME" => "Y",
+                    		"DISPLAY_PICTURE" => "Y",
+                    		"DISPLAY_PREVIEW_TEXT" => "Y",
+                    		"DISPLAY_TOP_PAGER" => "N",
+                    		"FIELD_CODE" => array(0=>"",1=>"",),
+                    		"FILTER_NAME" => "",
+                    		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                    		"IBLOCK_ID" => "10",
+                    		"IBLOCK_TYPE" => "city_lists",
+                    		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                    		"INCLUDE_SUBSECTIONS" => "Y",
+                    		"MESSAGE_404" => "",
+                    		"NEWS_COUNT" => "20",
+                    		"PAGER_BASE_LINK_ENABLE" => "N",
+                    		"PAGER_DESC_NUMBERING" => "N",
+                    		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                    		"PAGER_SHOW_ALL" => "N",
+                    		"PAGER_SHOW_ALWAYS" => "N",
+                    		"PAGER_TEMPLATE" => ".default",
+                    		"PAGER_TITLE" => "Новости",
+                    		"PARENT_SECTION" => "",
+                    		"PARENT_SECTION_CODE" => "moscow",
+                    		"PREVIEW_TRUNCATE_LEN" => "",
+                    		"PROPERTY_CODE" => array(0=>"",1=>"",),
+                    		"SET_BROWSER_TITLE" => "Y",
+                    		"SET_LAST_MODIFIED" => "N",
+                    		"SET_META_DESCRIPTION" => "Y",
+                    		"SET_META_KEYWORDS" => "Y",
+                    		"SET_STATUS_404" => "N",
+                    		"SET_TITLE" => "N",
+                    		"SHOW_404" => "N",
+                    		"SORT_BY1" => "ACTIVE_FROM",
+                    		"SORT_BY2" => "SORT",
+                    		"SORT_ORDER1" => "DESC",
+                    		"SORT_ORDER2" => "ASC",
+                    		"STRICT_SECTION_CHECK" => "N"
+                    	)
+                    );?>
 
                 </div>
             </div>
