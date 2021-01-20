@@ -1,0 +1,44 @@
+.morgues_list_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .morgues_list {
+        list-style: circle;
+        padding: 0;
+        margin-left: 18px;
+        margin-right: 80px;
+
+        li {
+            color: #9b062d;
+
+            a {
+                color: #1a1a1a;
+                font-size: 15px;
+                font-weight: 400;
+                font-style: normal;
+                letter-spacing: normal;
+                line-height: 30.48px;
+
+                &:hover,
+                &:focus {
+                    color: #9b062d;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    .morgues_list_wrapper {
+        .morgues_list {
+            margin-right: 50px;
+        }
+    }
+}
+
+@media (max-width: 780px) {
+    .morgues_list_wrapper {
+        display: block;
+    }
+}

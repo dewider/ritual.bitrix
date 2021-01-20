@@ -1219,30 +1219,6 @@ body {
         line-height: 25.4px; }
         .morgues_content_wrapper .morgues_content .morgues_kinds li span .underline {
           text-decoration: underline; }
-  .morgues_content_wrapper .morgues_content .morgues_list_wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start; }
-    .morgues_content_wrapper .morgues_content .morgues_list_wrapper .morgues_list {
-      list-style: circle;
-      padding: 0;
-      margin-left: 18px;
-      margin-right: 80px; }
-      .morgues_content_wrapper .morgues_content .morgues_list_wrapper .morgues_list li {
-        color: #9b062d; }
-        .morgues_content_wrapper .morgues_content .morgues_list_wrapper .morgues_list li a {
-          color: #1a1a1a;
-          font-size: 15px;
-          font-weight: 400;
-          font-style: normal;
-          letter-spacing: normal;
-          line-height: 30.48px; }
-          .morgues_content_wrapper .morgues_content .morgues_list_wrapper .morgues_list li a:hover, .morgues_content_wrapper .morgues_content .morgues_list_wrapper .morgues_list li a:focus {
-            color: #9b062d; }
-
-@media (max-width: 980px) {
-  .morgues_content_wrapper .morgues_content .morgues_list_wrapper .morgues_list {
-    margin-right: 50px; } }
 
 @media (max-width: 780px) {
   .morgues_content_wrapper .morgues_content {
@@ -1251,9 +1227,7 @@ body {
       font-size: 16px;
       line-height: 26px; }
     .morgues_content_wrapper .morgues_content h6 {
-      margin-bottom: 20px; }
-    .morgues_content_wrapper .morgues_content .morgues_list_wrapper {
-      display: block; } }
+      margin-bottom: 20px; } }
 
 /*! SECTION MORGUES PAGE CONTENT END */
 /*! SECTION CEMETERIES PAGE CONTENT START */
@@ -1276,46 +1250,13 @@ body {
     line-height: 25.4px; }
     .cemeteries_content_wrapper .cemeteries_content .descr .underline {
       text-decoration: underline; }
-  .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 40px 0;
-    margin: 0 -15px; }
-    .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper.middle {
-      border-top: 1px solid #dbdbdb;
-      border-bottom: 1px solid #dbdbdb; }
-    .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper .cemeteries {
-      width: calc(100% / 4);
-      margin: 0 15px; }
-      .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper .cemeteries .cemeteries_list {
-        list-style: circle;
-        padding: 0;
-        margin-left: 18px; }
-        .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper .cemeteries .cemeteries_list li {
-          color: #9b062d; }
-          .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper .cemeteries .cemeteries_list li a {
-            color: #1a1a1a;
-            font-size: 15px;
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: normal;
-            line-height: 30.48px;
-            transition: color 0.2s; }
-            .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper .cemeteries .cemeteries_list li a:hover, .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper .cemeteries .cemeteries_list li a:focus {
-              color: #9b062d; }
 
 @media (max-width: 780px) {
   .cemeteries_content_wrapper .cemeteries_content {
     padding-bottom: 40px; }
     .cemeteries_content_wrapper .cemeteries_content h2 {
       font-size: 16px;
-      line-height: 26px; }
-    .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper {
-      display: block;
-      padding: 25px 0; }
-      .cemeteries_content_wrapper .cemeteries_content .cemeteries_list_wrapper .cemeteries {
-        width: 100%; } }
+      line-height: 26px; } }
 
 /*! SECTION CEMETERIES PAGE CONTENT END */
 /*!SECTION REFERENCE INFO START */
@@ -2904,91 +2845,91 @@ body {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(32px, auto, 26px, 0); }
+    clip: rect(24px, auto, 29px, 0); }
   5% {
-    clip: rect(99px, auto, 42px, 0); }
+    clip: rect(88px, auto, 76px, 0); }
   10% {
-    clip: rect(76px, auto, 61px, 0); }
+    clip: rect(13px, auto, 42px, 0); }
   15% {
-    clip: rect(82px, auto, 44px, 0); }
+    clip: rect(15px, auto, 29px, 0); }
   20% {
-    clip: rect(4px, auto, 68px, 0); }
+    clip: rect(67px, auto, 67px, 0); }
   25% {
-    clip: rect(58px, auto, 36px, 0); }
+    clip: rect(99px, auto, 73px, 0); }
   30% {
-    clip: rect(88px, auto, 91px, 0); }
+    clip: rect(91px, auto, 76px, 0); }
   35% {
-    clip: rect(29px, auto, 57px, 0); }
+    clip: rect(15px, auto, 41px, 0); }
   40% {
-    clip: rect(51px, auto, 40px, 0); }
+    clip: rect(38px, auto, 56px, 0); }
   45% {
-    clip: rect(53px, auto, 19px, 0); }
+    clip: rect(18px, auto, 28px, 0); }
   50% {
-    clip: rect(10px, auto, 22px, 0); }
+    clip: rect(82px, auto, 2px, 0); }
   55% {
-    clip: rect(30px, auto, 97px, 0); }
+    clip: rect(70px, auto, 36px, 0); }
   60% {
-    clip: rect(9px, auto, 53px, 0); }
+    clip: rect(73px, auto, 29px, 0); }
   65% {
-    clip: rect(22px, auto, 17px, 0); }
+    clip: rect(97px, auto, 3px, 0); }
   70% {
-    clip: rect(97px, auto, 58px, 0); }
+    clip: rect(70px, auto, 10px, 0); }
   75% {
-    clip: rect(27px, auto, 53px, 0); }
+    clip: rect(39px, auto, 8px, 0); }
   80% {
-    clip: rect(49px, auto, 93px, 0); }
+    clip: rect(94px, auto, 76px, 0); }
   85% {
-    clip: rect(17px, auto, 4px, 0); }
+    clip: rect(45px, auto, 69px, 0); }
   90% {
-    clip: rect(94px, auto, 39px, 0); }
+    clip: rect(47px, auto, 61px, 0); }
   95% {
-    clip: rect(1px, auto, 20px, 0); }
+    clip: rect(72px, auto, 68px, 0); }
   100% {
-    clip: rect(57px, auto, 21px, 0); } }
+    clip: rect(44px, auto, 46px, 0); } }
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(17px, 9999px, 64px, 0); }
+    clip: rect(30px, 9999px, 14px, 0); }
   5% {
-    clip: rect(68px, 9999px, 49px, 0); }
+    clip: rect(5px, 9999px, 56px, 0); }
   10% {
-    clip: rect(92px, 9999px, 86px, 0); }
+    clip: rect(12px, 9999px, 43px, 0); }
   15% {
-    clip: rect(9px, 9999px, 96px, 0); }
+    clip: rect(59px, 9999px, 4px, 0); }
   20% {
-    clip: rect(79px, 9999px, 52px, 0); }
+    clip: rect(39px, 9999px, 83px, 0); }
   25% {
-    clip: rect(17px, 9999px, 29px, 0); }
+    clip: rect(99px, 9999px, 62px, 0); }
   30% {
-    clip: rect(86px, 9999px, 32px, 0); }
+    clip: rect(95px, 9999px, 86px, 0); }
   35% {
-    clip: rect(37px, 9999px, 58px, 0); }
+    clip: rect(46px, 9999px, 22px, 0); }
   40% {
-    clip: rect(21px, 9999px, 28px, 0); }
+    clip: rect(1px, 9999px, 91px, 0); }
   45% {
-    clip: rect(67px, 9999px, 19px, 0); }
+    clip: rect(76px, 9999px, 43px, 0); }
   50% {
-    clip: rect(37px, 9999px, 37px, 0); }
+    clip: rect(43px, 9999px, 31px, 0); }
   55% {
-    clip: rect(50px, 9999px, 81px, 0); }
+    clip: rect(28px, 9999px, 96px, 0); }
   60% {
-    clip: rect(58px, 9999px, 45px, 0); }
+    clip: rect(89px, 9999px, 77px, 0); }
   65% {
-    clip: rect(19px, 9999px, 49px, 0); }
+    clip: rect(97px, 9999px, 91px, 0); }
   70% {
-    clip: rect(75px, 9999px, 46px, 0); }
+    clip: rect(86px, 9999px, 14px, 0); }
   75% {
-    clip: rect(23px, 9999px, 67px, 0); }
+    clip: rect(70px, 9999px, 64px, 0); }
   80% {
-    clip: rect(52px, 9999px, 76px, 0); }
+    clip: rect(30px, 9999px, 24px, 0); }
   85% {
-    clip: rect(46px, 9999px, 31px, 0); }
+    clip: rect(59px, 9999px, 25px, 0); }
   90% {
-    clip: rect(35px, 9999px, 97px, 0); }
+    clip: rect(99px, 9999px, 56px, 0); }
   95% {
-    clip: rect(38px, 9999px, 58px, 0); }
+    clip: rect(73px, 9999px, 75px, 0); }
   100% {
-    clip: rect(19px, 9999px, 93px, 0); } }
+    clip: rect(54px, 9999px, 39px, 0); } }
 
 .bx-soa-pp .row {
   display: flex; }

@@ -2,21 +2,21 @@
 $aMenuLinks = Array(
 	Array(
 		"О компании", 
-		"news/", 
+		"about/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Отзывы", 
-		"about/howto/", 
+		"about/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Политика конфиденциальности", 
-		"about/delivery/", 
+		"about/", 
 		Array(), 
 		Array(), 
 		"" 
