@@ -66,7 +66,16 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
                             </p>
                         </div>
                     </div>
-                    <button class="btn">Заказать обратный звонок</button>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                            "AREA_FILE_SHOW" => "sect", 
+                            "AREA_FILE_SUFFIX" => "callback", 
+                            "AREA_FILE_RECURSIVE" => "Y", 
+                            "EDIT_TEMPLATE" => "standard.php" 
+                        )
+                    );?>
                 </div>
             </div>
         </div>
@@ -102,7 +111,16 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
                             </p>
                         </div>
                     </div>
-                    <button class="btn">Заказать обратный звонок</button>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                            "AREA_FILE_SHOW" => "sect", 
+                            "AREA_FILE_SUFFIX" => "callback", 
+                            "AREA_FILE_RECURSIVE" => "Y", 
+                            "EDIT_TEMPLATE" => "standard.php" 
+                        )
+                    );?>
                 </div>
                 <div class="contacts_districts_item">
                     <img src="<?=SITE_TEMPLATE_PATH?>/img/moscow_map.png" alt="map">

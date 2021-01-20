@@ -42,8 +42,17 @@
                     </div>
                 </div>
                 <div class="header_btn">
-                    <button class="btn">Заказать обратный звонок</button>
-                </div>
+                    <?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "sect", 
+                                "AREA_FILE_SUFFIX" => "callback", 
+                                "AREA_FILE_RECURSIVE" => "Y", 
+                                "EDIT_TEMPLATE" => "standard.php" 
+                            )
+                        );?>
+                    </div>
                 <?$APPLICATION->IncludeComponent(
                 	"bitrix:sale.basket.basket.line",
                 	"",
