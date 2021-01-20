@@ -769,7 +769,7 @@ var CRamCalc =
 			}
 			data.CALC[id].PARENT_ID = parentID;
 		})
-		
+		console.log(data)
 		$.ajax({url: url, type: "POST", data: data}).done(function(msg)
 		{
 			CRamCalc.ShowPopup({id: parentID, status: msg});

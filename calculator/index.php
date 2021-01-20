@@ -1,8 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Калькулятор");
-?><!--SECTION CALCULATOR PAGE CONTENT START--> <section class="calculator_page_content_wrapper">
-<div class="container">
+?><!--SECTION CALCULATOR PAGE CONTENT START-->
+<section class="calculator_page_content_wrapper">
+	<div class="container">
 	 <?$APPLICATION->IncludeComponent(
 		"bitrix:breadcrumb",
 		"",
@@ -13,16 +14,22 @@ $APPLICATION->SetTitle("Калькулятор");
 		"ram:ram.calc",
 		"ritual",
 		Array(
-			"ACTION" => "request",
+			"ACTION" => "basket",
 			"CACHE_TIME" => "36000000",
 			"CACHE_TYPE" => "A",
+			//"ELEMENT_ID" => $_REQUEST["ELEMENT_ID"],
+			"ELEMENT_ID" => 334,
 			"HIDDEN_CALCULATIONS" => array(),
 			"JQUERY" => "N",
 			"MULTYPLE" => "N",
+			"PRICE" => "0",
 			"PROPERTY_1_DISPLAY" => "select",
 			"PROPERTY_2_DISPLAY" => "select",
 			"PROPERTY_3_DISPLAY" => "select",
 			"PROPERTY_4_DISPLAY" => "select",
+			"REQUEST_BASKET_BTN" => "Оформить заказ",
+			"REQUEST_BASKET_FAIL" => "Ошибка",
+			"REQUEST_BASKET_SUCCESS" => "Заказ добавлен в корзину",
 			"REQUEST_BTN" => "Отправить",
 			"REQUEST_DESCRIPTION" => "Указанная стоимость не является итоговой. Окончательную стоимость уточняйте у менеджера",
 			"REQUEST_EMAIL" => "",
@@ -36,200 +43,9 @@ $APPLICATION->SetTitle("Калькулятор");
 			"USER_CONSENT_IS_CHECKED" => "Y",
 			"USER_CONSENT_IS_LOADED" => "N"
 		)
-	);?><br>
-	<div class="calculator_page_content">
-		<h4>Гроб</h4>
-		<div class="content_list">
-			<div class="content_item">
-				<h6>Материал</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Композиция на крышку гроба</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Похоронный комплект в гроб</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-		</div>
-		<h4>Комплект одежды для усопшего</h4>
-		<div class="content_list">
-			<div class="content_item">
-				<h6>Материал</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-		</div>
-		<h4>Венки</h4>
-		<div class="content_list">
-			<div class="content_item">
-				<h6>Венок</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Лента на венок</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Венок в изголовье</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-		</div>
-		<h4>Крест</h4>
-		<div class="content_list">
-			<div class="content_item">
-				<h6>Материал</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Табличка</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-		</div>
-		<h4>Организация</h4>
-		<div class="content_list">
-			<div class="content_item">
-				<h6>Ритуальный лифт (сингуматор)</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Доставка предметов ритуала</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Перевозка к месту захоронения</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-		</div>
-		<div class="content_list">
-			<div class="content_item">
-				<h6>Оформление заказа</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Похоронная бригада</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-			<div class="content_item">
-				<h6>Сбор документов</h6>
-				<div class="select_wrapper">
-					<select class="funeral_calculator">
-						<option value=""></option>
-						<option>Выбор номер один</option>
-						<option>Выбор номер два</option>
-						<option>Выбор номер три</option>
-					</select>
-				</div>
-			</div>
-		</div>
+	);?>
+	
 	</div>
-	<div class="calculator_page_info">
-		<div class="btn_wrapper">
- <button class="btn">Оформить заказ</button>
-		</div>
-		<div class="price">
-			 Итого: 21 990 <i class="fa fa-rub" aria-hidden="true"></i>
-		</div>
-	</div>
-</div>
  </section>
 <!--SECTION CALCULATOR PAGE CONTENT END-->
 <?$APPLICATION->IncludeComponent(
