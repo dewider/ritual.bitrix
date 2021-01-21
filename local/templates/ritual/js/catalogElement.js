@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             if (!obPopupWin){
 
-                var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
+                var obPopupWin = new BX.PopupWindow('CatalogElementBasket', null, {
                     autoHide: false,
                     offsetLeft: 0,
                     offsetTop: 0,

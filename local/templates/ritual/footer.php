@@ -135,12 +135,12 @@
 -->
 
 <div id="cb-popup-content">
-<?$APPLICATION->IncludeComponent("bitrix:main.feedback","",Array(
+<?$APPLICATION->IncludeComponent("ivit:main.feedback","",Array(
         "USE_CAPTCHA" => "Y",
         "OK_TEXT" => "Спасибо, ваше сообщение принято.",
-        "EMAIL_TO" => "my@email.com",
-        "REQUIRED_FIELDS" => Array("NAME","EMAIL","MESSAGE"),
-		"EVENT_MESSAGE_ID" => Array("5"),
+		"EMAIL_TO" => "radiontcev@ivit.pro",
+        "REQUIRED_FIELDS" => Array("NAME","PHONE"),
+		"EVENT_MESSAGE_ID" => Array("7"),
 		
 		"AJAX_MODE" => "Y",  // режим AJAX
 		"AJAX_OPTION_SHADOW" => "N", // затемнять область

@@ -42,7 +42,7 @@ BX.ready(function(e){
         cbPopup.show();
     }
 
-    var cbPopup = BX.PopupWindowManager.create('CallbackPopup', null, {
+    var cbPopup = new BX.PopupWindow('CallbackPopup', null, {
         autoHide: false,
         offsetLeft: 0,
         offsetTop: 0,

@@ -25,6 +25,7 @@ use Bitrix\Main\Page\Asset;
     Asset::getInstance()->addJs( SITE_TEMPLATE_PATH . "/js/script.js" );
     ?>
     <? $APPLICATION->ShowHead(); ?>
+    <?CJSCore::Init(array("popup"));?>
 </head>
 
 <body>
