@@ -36,6 +36,30 @@ BX.ready(function(e){
         $tab.show();
         jQuery('.prices_content_tabs .tab').not($tab).hide();
     });
+
+    // обработка кнопок ЗАКАЗАТЬ ЗВОНОК
+    function cbClickHandler(event) {
+        cbPopup.show();
+    }
+
+    var cbPopup = BX.PopupWindowManager.create('CallbackPopup', null, {
+        autoHide: false,
+        offsetLeft: 0,
+        offsetTop: 0,
+        overlay: true,
+        closeByEsc: true,
+        titleBar: true,
+        closeIcon: true,
+        contentColor: 'white',
+        className: "popup"
+    });
+
+    cbPopup.setContent( BX("cb-popup-content") );
+    
+    var cbButtons = document.querySelectorAll("button.callback");
+    cbButtons.forEach( function( item ) {
+        item.addEventListener( "click", cbClickHandler );
+    });
 });
 
 jQuery(function() {

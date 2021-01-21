@@ -133,5 +133,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js" integrity="sha512-igVQ7hyQVijOUlfg3OmcTZLwYJIBXU63xL9RC12xBHNpmGJAktDnzl9Iw0J4yrSaQtDxTTVlwhY730vphoVqJQ==" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://maps.api.2gis.ru/1.0"></script>
 -->
+
+<div id="cb-popup-content">
+<?$APPLICATION->IncludeComponent("bitrix:main.feedback","",Array(
+        "USE_CAPTCHA" => "Y",
+        "OK_TEXT" => "Спасибо, ваше сообщение принято.",
+        "EMAIL_TO" => "my@email.com",
+        "REQUIRED_FIELDS" => Array("NAME","EMAIL","MESSAGE"),
+		"EVENT_MESSAGE_ID" => Array("5"),
+		
+		"AJAX_MODE" => "Y",  // режим AJAX
+		"AJAX_OPTION_SHADOW" => "N", // затемнять область
+		"AJAX_OPTION_JUMP" => "N", // скроллить страницу до компонента.
+		"AJAX_OPTION_STYLE" => "Y", // подключать стили
+		"AJAX_OPTION_HISTORY" => "N",
+    )
+);?>
+</div>
 </body>
 </html>

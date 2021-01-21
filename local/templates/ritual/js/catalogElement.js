@@ -71,8 +71,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let $sizeElement = $('.size[data-product-id="'+productId+'"]');
         let currentOfferId = $sizeElement.data('current-id');
 
-        console.log()
-
         if ($sizeElement.length > 0 && !currentOfferId) {
 
             if (!obPopupWin){
