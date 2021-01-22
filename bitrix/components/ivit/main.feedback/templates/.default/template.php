@@ -21,10 +21,10 @@ $this->addExternalJS(SITE_TEMPLATE_PATH . "/assest/inputmask/jquery.inputmask.mi
 if($arResult["OK_MESSAGE"] <> '')
 {
 	?><div class="mf-ok-text"><?=$arResult["OK_MESSAGE"]?></div><?
-}
+} else {
 ?>
 
-<form action="<?=POST_FORM_ACTION_URI?>" method="POST">
+<form action="<?=POST_FORM_ACTION_URI?>" method="POST" class="mf-form">
 <?=bitrix_sessid_post()?>
 	<div class="mf-name">
 		<div class="mf-text">
@@ -51,4 +51,6 @@ if($arResult["OK_MESSAGE"] <> '')
 	<input type="hidden" name="PARAMS_HASH" value="<?=$arResult["PARAMS_HASH"]?>">
 	<input type="submit" name="submit" value="<?=GetMessage("MFT_SUBMIT")?>">
 </form>
+
+<?}?>
 </div>

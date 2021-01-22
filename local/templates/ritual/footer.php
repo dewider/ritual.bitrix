@@ -143,10 +143,7 @@
 		"EVENT_MESSAGE_ID" => Array("7"),
 		
 		"AJAX_MODE" => "Y",  // режим AJAX
-		"AJAX_OPTION_SHADOW" => "N", // затемнять область
 		"AJAX_OPTION_JUMP" => "N", // скроллить страницу до компонента.
-		"AJAX_OPTION_STYLE" => "Y", // подключать стили
-		"AJAX_OPTION_HISTORY" => "N",
     )
 );?>
 </div>
