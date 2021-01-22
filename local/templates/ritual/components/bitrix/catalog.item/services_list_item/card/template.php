@@ -23,12 +23,17 @@ use \Bitrix\Main\Localization\Loc;
  */
 ?>
 <a href="<?=$item['DETAIL_PAGE_URL']?>" class="tab_item">
+    <?if($arParams["DISPLAY_TYPE"] === "vertical"):?>
+        <h4><?=$productTitle?></h4>
+        <?=$item["PROPERTIES"]["features"]["~VALUE"]["TEXT"];?>
+    <?else:?>
     <div class="descr">
         <h4><?=$productTitle?></h4>
         <p>
             <?=$item['PREVIEW_TEXT'];?>
         </p>
     </div>
+    <?endif;?>
     <div class="price">
         <?=$price['PRINT_RATIO_PRICE'];?>
     </div>

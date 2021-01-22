@@ -773,6 +773,7 @@ var CRamCalc =
 		$.ajax({url: url, type: "POST", data: data}).done(function(msg)
 		{
 			CRamCalc.ShowPopup({id: parentID, status: msg});
+			BX.onCustomEvent('OnBasketChange');
 		});
 		
 		return false;

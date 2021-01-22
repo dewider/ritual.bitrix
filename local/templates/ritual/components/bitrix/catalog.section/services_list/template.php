@@ -95,6 +95,7 @@ foreach ($arResult['ITEM_ROWS'] as $rowData){
 			'bitrix:catalog.item',
 			'services_list_item',
 			array(
+				"DISPLAY_TYPE" => $arParams["DISPLAY_TYPE"],
 				'RESULT' => array(
 					'ITEM' => $item,
 					//'AREA_ID' => $areaIds[$item['ID']],
