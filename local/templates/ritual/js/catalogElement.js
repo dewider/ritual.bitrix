@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             if (!obPopupWin){
 
                 var obPopupWin = new BX.PopupWindow('CatalogElementBasket', null, {
-                    autoHide: false,
+                    autoHide: true,
                     offsetLeft: 0,
                     offsetTop: 0,
                     overlay: true,
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         if (!obPopupWin){
 
                             var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
-                                autoHide: false,
+                                autoHide: true,
                                 offsetLeft: 0,
                                 offsetTop: 0,
                                 overlay: true,
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             if (!obPopupWin){
 
                 var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
-                    autoHide: false,
+                    autoHide: true,
                     offsetLeft: 0,
                     offsetTop: 0,
                     overlay: true,

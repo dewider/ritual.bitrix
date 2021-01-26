@@ -2595,6 +2595,11 @@ body {
                 padding: 35px 0 30px;
                 background: #f3f3f3;
 
+                div[id^="bx_incl_area_"]{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
                 .tab_item {
                     display: block;
                     text-decoration: none;
