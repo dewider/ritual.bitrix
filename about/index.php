@@ -5,16 +5,8 @@ $APPLICATION->AddHeadScript("http://maps.api.2gis.ru/1.0");
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
 ?>
 
-	<!--SECTION FUNERAL ORGANIZATION PAGE INFO CONTENT START-->
-<section class="funeral_organization_page_info_wrapper">
-    <div class="container">
-		<?$APPLICATION->IncludeComponent(
-				"bitrix:breadcrumb",
-				"",
-			Array(),
-			false
-		);?>
-        <h2>Ритуальные услуги в САО</h2>
+<!--SECTION FUNERAL ORGANIZATION PAGE INFO CONTENT START-->
+<!-- section open tag and title in header.php-->
         <div class="funeral_organization_page_info">
             <div class="info_item">
                 <p>
@@ -115,20 +107,38 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
 <!--SECTION FUNERAL ORGANIZATION PAGE LOCATION START-->
 <section class="funeral_organization_page_location_wrapper">
     <div class="container">
+
+        <?$sections = array(
+            array(
+                'code' => "moscow_region",
+                'title' => 'ГОРОДА ПОДМОСКОВЬЯ'
+            ),
+            array(
+                'code' => "moscow",
+                'title' => 'Москва'
+            )
+        );?>
+
         <div class="funeral_organization_page_location">
             <ul class="prices_navigation_tabs">
-                <li><a href="#tab1" class="active"><span>ГОРОДА ПОДМОСКОВЬЯ</span></a></li>
-                <li><a href="#tab2"><span>Москва</span></a></li>
+                <?
+                $i = 1;
+                foreach( $sections as $section ):?>
+                <li><a <?=($i == 1) ? 'class="active"': ''?> href="#tab<?=$i++?>"><span><?=$section['title']?></span></a></li>
+                <?endforeach;?>
             </ul>
 
             <div class="prices_content_tabs">
-                <div class="tab" id="tab1">
+                <?
+                $i = 1;
+                foreach( $sections as $section ):?>
+                <div class="tab" <?=( $i>1 ) ? 'style="display: none"' : ''?> id="tab<?=$i++?>">
                     <?$APPLICATION->IncludeComponent(
                     	"bitrix:news.list",
                     	"cities_list",
                     	Array(
                     		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-                    		"ADD_SECTIONS_CHAIN" => "Y",
+                    		"ADD_SECTIONS_CHAIN" => "N",
                     		"AJAX_MODE" => "N",
                     		"AJAX_OPTION_ADDITIONAL" => "",
                     		"AJAX_OPTION_HISTORY" => "N",
@@ -151,7 +161,7 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
                     		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
                     		"IBLOCK_ID" => "10",
                     		"IBLOCK_TYPE" => "city_lists",
-                    		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                    		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
                     		"INCLUDE_SUBSECTIONS" => "Y",
                     		"MESSAGE_404" => "",
                     		"NEWS_COUNT" => "20",
@@ -163,10 +173,10 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
                     		"PAGER_TEMPLATE" => ".default",
                     		"PAGER_TITLE" => "Новости",
                     		"PARENT_SECTION" => "",
-                    		"PARENT_SECTION_CODE" => "moscow_region",
+                    		"PARENT_SECTION_CODE" => $section['code'],
                     		"PREVIEW_TRUNCATE_LEN" => "",
                     		"PROPERTY_CODE" => array(0=>"",1=>"",),
-                    		"SET_BROWSER_TITLE" => "Y",
+                    		"SET_BROWSER_TITLE" => "N",
                     		"SET_LAST_MODIFIED" => "N",
                     		"SET_META_DESCRIPTION" => "Y",
                     		"SET_META_KEYWORDS" => "Y",
@@ -181,67 +191,8 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
                     	)
                     );?>
                 </div>
+                <?endforeach;?>
 
-                <div class="tab" id="tab2" style="display: none">
-                <?$APPLICATION->IncludeComponent(
-                    	"bitrix:news.list",
-                    	"cities_list",
-                    	Array(
-                    		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-                    		"ADD_SECTIONS_CHAIN" => "Y",
-                    		"AJAX_MODE" => "N",
-                    		"AJAX_OPTION_ADDITIONAL" => "",
-                    		"AJAX_OPTION_HISTORY" => "N",
-                    		"AJAX_OPTION_JUMP" => "N",
-                    		"AJAX_OPTION_STYLE" => "Y",
-                    		"CACHE_FILTER" => "N",
-                    		"CACHE_GROUPS" => "Y",
-                    		"CACHE_TIME" => "36000000",
-                    		"CACHE_TYPE" => "A",
-                    		"CHECK_DATES" => "Y",
-                    		"DETAIL_URL" => "",
-                    		"DISPLAY_BOTTOM_PAGER" => "Y",
-                    		"DISPLAY_DATE" => "Y",
-                    		"DISPLAY_NAME" => "Y",
-                    		"DISPLAY_PICTURE" => "Y",
-                    		"DISPLAY_PREVIEW_TEXT" => "Y",
-                    		"DISPLAY_TOP_PAGER" => "N",
-                    		"FIELD_CODE" => array(0=>"",1=>"",),
-                    		"FILTER_NAME" => "",
-                    		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                    		"IBLOCK_ID" => "10",
-                    		"IBLOCK_TYPE" => "city_lists",
-                    		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-                    		"INCLUDE_SUBSECTIONS" => "Y",
-                    		"MESSAGE_404" => "",
-                    		"NEWS_COUNT" => "20",
-                    		"PAGER_BASE_LINK_ENABLE" => "N",
-                    		"PAGER_DESC_NUMBERING" => "N",
-                    		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                    		"PAGER_SHOW_ALL" => "N",
-                    		"PAGER_SHOW_ALWAYS" => "N",
-                    		"PAGER_TEMPLATE" => ".default",
-                    		"PAGER_TITLE" => "Новости",
-                    		"PARENT_SECTION" => "",
-                    		"PARENT_SECTION_CODE" => "moscow",
-                    		"PREVIEW_TRUNCATE_LEN" => "",
-                    		"PROPERTY_CODE" => array(0=>"",1=>"",),
-                    		"SET_BROWSER_TITLE" => "Y",
-                    		"SET_LAST_MODIFIED" => "N",
-                    		"SET_META_DESCRIPTION" => "Y",
-                    		"SET_META_KEYWORDS" => "Y",
-                    		"SET_STATUS_404" => "N",
-                    		"SET_TITLE" => "N",
-                    		"SHOW_404" => "N",
-                    		"SORT_BY1" => "ACTIVE_FROM",
-                    		"SORT_BY2" => "SORT",
-                    		"SORT_ORDER1" => "DESC",
-                    		"SORT_ORDER2" => "ASC",
-                    		"STRICT_SECTION_CHECK" => "N"
-                    	)
-                    );?>
-
-                </div>
             </div>
         </div>
     </div>

@@ -3,15 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Организация похорон");
 ?>
 	<!--SECTION FUNERAL ORGANIZATION PAGE INFO CONTENT START-->
-<section class="funeral_organization_page_info_wrapper">
-    <div class="container">
-		<?$APPLICATION->IncludeComponent(
-			"bitrix:breadcrumb",
-			"",
-			Array(),
-			false
-		);?>
-        <h2>Организация похорон</h2>
+<!-- section open tag and title in header.php-->
         <div class="funeral_organization_page_info">
             <div class="info_item">
                 <img src="<?=SITE_TEMPLATE_PATH?>/img/serv.png" alt="image">

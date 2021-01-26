@@ -76,4 +76,55 @@ use Bitrix\Main\Page\Asset;
 </header>
 <!--HEADER END-->
 
+<?
+$breadcrumbPages = array(
+    array(
+        'path'           => "/info/graveyards/",
+        'page_class'     => "cemeteries_content_wrapper",
+        'content_class' => "cemeteries_content"
+    ),
+    array(
+        'path'           => "/info/morgues/",
+        'page_class'     => "morgues_content_wrapper",
+        'content_class' => "morgues_content"
+    ),
+    array(
+        'path'          => "/pricelist/",
+        'page_class'    => "prices_content_wrapper"
+    ),
+    array(
+        'path'          => "/about/contacts/",
+        'page_class'    => "contacts_content_wrapper"
+    ),
+    array(
+        'path'          => "/about/howto/",
+        'page_class'    => "funeral_organization_page_info_wrapper"
+    ),
+    array(
+        'path'          => "/about/",
+        'page_class'    => "funeral_organization_page_info_wrapper"
+    ),
+    array(
+        'path'          => "/calculator/",
+        'page_class'    => "calculator_page_content_wrapper"
+    )
+);
+$currentPath = $APPLICATION->GetCurPage();
 
+if( false !== $index =  array_search( $currentPath, array_column( $breadcrumbPages, 'path' ) ) ):?>
+
+    <section class="<?=$breadcrumbPages[$index]['page_class']?>">
+        <div class="container">
+            <?if( isset( $breadcrumbPages[$index]['content_class'] )):?>
+            <div class="<?=$breadcrumbPages[$index]['content_class']?>">
+            <?endif?>
+            <?$APPLICATION->IncludeComponent(
+    				"bitrix:breadcrumb",
+    				"",
+    			Array(),
+    			false
+    		);?>
+            <h2><?=$APPLICATION->ShowTitle()?></h2>
+
+<?endif;?>
+<!-- section open tag and title in header.php-->

@@ -5,15 +5,7 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
 ?>
 
 <!--SECTION CONTACTS PAGE CONTENT START-->
-<section class="contacts_content_wrapper">
-    <div class="container">
-		<?$APPLICATION->IncludeComponent(
-				"bitrix:breadcrumb",
-				"",
-			Array(),
-			false
-		);?>
-        <h2>НАШИ КОНТАКТЫ</h2>
+<!-- section open tag and title in header.php-->
     </div>
     <div class="contacts_content">
         <div class="container">

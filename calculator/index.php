@@ -2,14 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Калькулятор");
 ?><!--SECTION CALCULATOR PAGE CONTENT START-->
-<section class="calculator_page_content_wrapper">
-	<div class="container">
-	 <?$APPLICATION->IncludeComponent(
-		"bitrix:breadcrumb",
-		"",
-	Array()
-	);?>
-	<h2>Рассчитать стоимость похорон</h2>
+<!-- section open tag and title in header.php-->
 	<?$APPLICATION->IncludeComponent(
 		"ram:ram.calc",
 		"ritual",

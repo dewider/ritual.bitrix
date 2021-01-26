@@ -4,16 +4,7 @@ $APPLICATION->SetTitle("Кладбища");
 ?>
 
 <!--SECTION CEMETERIES PAGE CONTENT START-->
-<section class="cemeteries_content_wrapper">
-    <div class="container">
-        <div class="cemeteries_content">
-            <?$APPLICATION->IncludeComponent(
-		    		"bitrix:breadcrumb",
-		    		"",
-		    	Array(),
-		    	false
-		    );?>
-            <h2>Кладбища Москвы</h2>
+<!-- section open tag and title in header.php-->
             <p class="descr">
                 Приобретение места на кладбище входит в число основных мероприятий при организации похорон.
                 <span class="underline">Следует сразу оговориться, что просто так купить участок для захоронения нельзя.</span> Российское
@@ -32,6 +23,7 @@ $APPLICATION->SetTitle("Кладбища");
             	"bitrix:news.list",
             	"graveyards_list",
             	Array(
+					"ADD_SECTIONS_CHAIN" => "N",
             		"CACHE_FILTER" => "N",
             		"CACHE_GROUPS" => "Y",
             		"CACHE_TIME" => "36000000",
@@ -41,7 +33,8 @@ $APPLICATION->SetTitle("Кладбища");
             		"FILTER_NAME" => "",
             		"IBLOCK_ID" => "11",
             		"IBLOCK_TYPE" => "content",
-            		"INCLUDE_SUBSECTIONS" => "Y",
+					"INCLUDE_SUBSECTIONS" => "Y",
+					"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
             		"NEWS_COUNT" => "",
             		"PARENT_SECTION_CODE" => "graveyards",
             		"PROPERTY_CODE" => array(0=>"",1=>"",),
@@ -55,7 +48,7 @@ $APPLICATION->SetTitle("Кладбища");
             		"SORT_BY2" => "SORT",
             		"SORT_ORDER1" => "ASC",
             		"SORT_ORDER2" => "ASC",
-            		"STRICT_SECTION_CHECK" => "N"
+					"STRICT_SECTION_CHECK" => "N"
             	)
             );?>
 
