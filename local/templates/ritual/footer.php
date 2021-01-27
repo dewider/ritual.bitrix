@@ -170,7 +170,7 @@ if( false !== array_search( $currentPath, $showLicensePages ) ):?>
     </div>
 </footer>
 <!--FOOTER END-->
-
+<?///*?>
 <div id="cb-popup-content">
 <?$APPLICATION->IncludeComponent("ivit:main.feedback","",Array(
         "USE_CAPTCHA" => "Y",
@@ -184,5 +184,7 @@ if( false !== array_search( $currentPath, $showLicensePages ) ):?>
     )
 );?>
 </div>
+<?//*/?>
+
 </body>
 </html>

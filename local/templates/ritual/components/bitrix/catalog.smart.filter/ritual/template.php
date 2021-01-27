@@ -18,7 +18,7 @@ $this->addExternalJs( SITE_TEMPLATE_PATH . "/assest/nouislider/nouislider.min.js
 
 /*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-Не работает бес классов bx-filter-parameters-box, bx-filter-container-modef
+Не работает без классов bx-filter-parameters-box, bx-filter-container-modef
 и блока bx-filter-popup-result
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */

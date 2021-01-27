@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             if (!obPopupWin){
 
-                var obPopupWin = new BX.PopupWindow('CatalogElementBasket', null, {
+                var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
                     autoHide: true,
                     offsetLeft: 0,
                     offsetTop: 0,
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         } 
             
                         var popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
-                            + "Товар доюавлен в корзину "
+                            + "Товар добавлен в корзину "
                             + '</p></div>';
                         obPopupWin.setContent(popupContent);
                         obPopupWin.show();
@@ -148,53 +148,44 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let $sizeElement = $('.size[data-product-id="'+productId+'"]');
         let currentOfferId = $sizeElement.data('current-id');
 
-        if ($sizeElement.length > 0 && !currentOfferId) {
 
-            if (!obPopupWin){
+        let itemId = currentOfferId ? currentOfferId : productId;
+        let basketUrl = getBasketUrl(itemId, true);
 
-                var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
-                    autoHide: true,
-                    offsetLeft: 0,
-                    offsetTop: 0,
-                    overlay: true,
-                    closeByEsc: true,
-                    titleBar: true,
-                    closeIcon: true,
-                    contentColor: 'white',
-                    className: "popup"
-                });
-            } 
+        let qty = getQty(productId);
+        let basketParams = {
+            'ajax_basket': 'Y',
+            'quantity': qty
+        };
+            
+            let title = PARAMS.PRODUCT_TITLE;
+            let popupElement = document.getElementById("one-click-popup-content");
 
-            var popupContent = '<div style="width: 100%; margin: 0; text-align: center;"><p>'
-                + "Не выбрано торговое предложение "
-                + '</p></div>';
-            obPopupWin.setContent(popupContent);
-            obPopupWin.show();
-            return;
+            let popupTitle = popupElement.querySelector("h2.mf-title");
+            if( popupTitle ) popupTitle.innerHTML = title;
 
-        } else {
-            let itemId = currentOfferId ? currentOfferId : productId;
-            let basketUrl = getBasketUrl(itemId, true);
+            let popupProductId = popupElement.querySelector('input[name="product_id"]');
+            if( popupProductId ) popupProductId.value = itemId;
 
-            let qty = getQty(productId);
-            let basketParams = {
-                'ajax_basket': 'Y',
-                'quantity': qty
-            };
+            let popupProductTitle = popupElement.querySelector('input[name="product_title"]')
+            if( popupProductTitle ) popupProductTitle.value = title;
 
-            BX.ajax({
-                method: 'POST',
-                dataType: 'json',
-                url: basketUrl,
-                data: basketParams,
-                onsuccess: BX.proxy(function (arResult) {
-                    if (arResult.STATUS === 'OK') {
-                        BX.onCustomEvent('OnBasketChange');
-                        if( PARAMS.BASKET.BASKET_URL )
-                            location.href = PARAMS.BASKET.PATH_TO_ORDER;
-                    }
-                }, this)
+
+        if (!obPopupWin){
+            var obPopupWin = BX.PopupWindowManager.create('CatalogElementBasket', null, {
+                autoHide: true,
+                offsetLeft: 0,
+                offsetTop: 0,
+                overlay: true,
+                closeByEsc: true,
+                titleBar: true,
+                closeIcon: true,
+                contentColor: 'white',
+                className: "popup"
             });
         }
+        obPopupWin.setContent( BX("one-click-popup-content") );
+        obPopupWin.show();
+
     });
 });

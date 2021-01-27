@@ -178,7 +178,7 @@ $APPLICATION->SetTitle("Интернет-магазин");
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
-		"SHOW_404" => "N",
+		"SHOW_404" => "Y",
 		"SHOW_DEACTIVATED" => "N",
 		"SHOW_DISCOUNT_PERCENT" => "Y",
 		"SHOW_EMPTY_STORE" => "Y",
@@ -217,4 +217,18 @@ $APPLICATION->SetTitle("Интернет-магазин");
 		"USE_STORE" => "Y",
 		"VARIABLE_ALIASES" => array("section"=>array("SECTION_ID"=>"SECTION_ID",),)
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+<div id="one-click-popup-content" style="display: none">
+<?$APPLICATION->IncludeComponent("ivit:main.feedback","one_click",Array(
+        "USE_CAPTCHA" => "Y",
+        "OK_TEXT" => "Спасибо, ваше сообщение принято.",
+		"EMAIL_TO" => "radiontcev@ivit.pro",
+        "REQUIRED_FIELDS" => Array("NAME","PHONE"),
+		"EVENT_MESSAGE_ID" => Array("53"),
+		
+		"AJAX_MODE" => "Y",  // режим AJAX
+		"AJAX_OPTION_JUMP" => "N", // скроллить страницу до компонента.
+    )
+);?>
+</div>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

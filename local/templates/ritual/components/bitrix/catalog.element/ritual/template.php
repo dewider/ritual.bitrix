@@ -170,10 +170,11 @@ $jsParams = array(
         'ADD_URL_TEMPLATE' => $arResult['~ADD_URL_TEMPLATE'],
         'BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE'],
         "PATH_TO_ORDER" => SITE_DIR."personal/order/make/"
-    )
+    ),
+    'PRODUCT_TITLE' => $arResult['NAME']
+
 );
 ?>
-<pre><?=var_dump($arResult)?></pre>
 <script>
     var PARAMS = <?=CUtil::PhpToJSObject($jsParams, false, true)?>
 </script>
