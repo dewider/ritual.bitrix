@@ -251,29 +251,5 @@ $APPLICATION->SetTitle("Ритуальные услуги");
         "EDIT_TEMPLATE" => "standard.php" 
     )
 );?>
-<?$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_SHOW" => "sect", 
-        "AREA_FILE_SUFFIX" => "reference-info", 
-        "AREA_FILE_RECURSIVE" => "Y", 
-        "EDIT_TEMPLATE" => "standard.php" 
-    )
-);?>
-
-<!--SECTION MAIN SERVICES PAGE CERTIFICATES START-->
-<section class="main_services_page_certificates_wrapper">
-    <div class="container">
-        <h2>Лицензии и сертификаты</h2>
-        <div class="main_services_page_certificates">
-            <img src="<?=SITE_TEMPLATE_PATH?>/img/certificate.png" alt="license">
-            <img src="<?=SITE_TEMPLATE_PATH?>/img/certificate.png" alt="license">
-            <img src="<?=SITE_TEMPLATE_PATH?>/img/certificate.png" alt="license">
-            <img src="<?=SITE_TEMPLATE_PATH?>/img/certificate.png" alt="license">
-        </div>
-    </div>
-</section>
-<!--SECTION MAIN SERVICES PAGE CERTIFICATES END-->
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

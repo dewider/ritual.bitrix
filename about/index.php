@@ -220,15 +220,4 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/contactsPageInit.js");
 </section>
 <!--SECTION FUNERAL ORGANIZATION PAGE TEXT CONTENT END-->
 
-<?$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_SHOW" => "sect", 
-        "AREA_FILE_SUFFIX" => "reference-info", 
-        "AREA_FILE_RECURSIVE" => "Y", 
-        "EDIT_TEMPLATE" => "standard.php" 
-    )
-);?>
-
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -41,13 +41,4 @@ $APPLICATION->SetTitle("Калькулятор");
 	</div>
  </section>
 <!--SECTION CALCULATOR PAGE CONTENT END-->
-<?$APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	Array(
-		"AREA_FILE_RECURSIVE" => "Y",
-		"AREA_FILE_SHOW" => "sect",
-		"AREA_FILE_SUFFIX" => "reference-info",
-		"EDIT_TEMPLATE" => "standard.php"
-	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

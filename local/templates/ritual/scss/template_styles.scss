@@ -3197,6 +3197,12 @@ body {
                 flex-direction: row;
                 justify-content: space-around;
 
+                div[id^="bx_incl_area"]{
+                    display: flex;
+                    justify-content: space-around;
+                    width: 100%;
+                }
+
                 .features {
                     list-style: circle;
                     margin: 25px 0 0;
@@ -4012,6 +4018,10 @@ body {
             .footer_list_wrapper {
                 display: flex;
                 flex-direction: row;
+
+                div[id^=bx_incl_area]{
+                    display: flex;
+                }
             }
 
             .footer_list {

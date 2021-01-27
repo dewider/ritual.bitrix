@@ -1,5 +1,52 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 
+<?
+$currentPath = $APPLICATION->GetCurPage();
+$showReferencePages = array(
+						"/about/howto/", 
+						"/services/",
+						"/about/",
+						"/about/contacts/",
+						"/pricelist/",
+						"/info/morgues/",
+						"/info/graveyards/",
+						"/calculator/"
+					);
+
+if( false !== array_search( $currentPath, $showReferencePages ) ):?>
+
+<?$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    Array(
+        "AREA_FILE_SHOW" => "sect", 
+        "AREA_FILE_SUFFIX" => "reference-info", 
+        "AREA_FILE_RECURSIVE" => "Y", 
+        "EDIT_TEMPLATE" => "standard.php" 
+    )
+);?>
+
+<?endif?>
+<?
+$showLicensePages = array("/services/");
+if( false !== array_search( $currentPath, $showLicensePages ) ):?>
+
+<!--SECTION MAIN SERVICES PAGE CERTIFICATES START-->
+<section class="main_services_page_certificates_wrapper">
+    <div class="container">
+        <h2>Лицензии и сертификаты</h2>
+        <div class="main_services_page_certificates">
+            <img src="<?=SITE_TEMPLATE_PATH?>/img/certificate.png" alt="license">
+            <img src="<?=SITE_TEMPLATE_PATH?>/img/certificate.png" alt="license">
+            <img src="<?=SITE_TEMPLATE_PATH?>/img/certificate.png" alt="license">
+            <img src="<?=SITE_TEMPLATE_PATH?>/img/certificate.png" alt="license">
+        </div>
+    </div>
+</section>
+<!--SECTION MAIN SERVICES PAGE CERTIFICATES END-->
+
+<?endif?>
+
         <!--FOOTER START-->
 <footer class="footer_wrapper">
     <div class="container">
