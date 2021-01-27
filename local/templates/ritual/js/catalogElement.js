@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let $sizeElement = $('.size[data-product-id="'+productId+'"]');
         let currentOfferId = $sizeElement.data('current-id');
 
-        if ($sizeElement && !currentOfferId) {
+        if ($sizeElement.length > 0 && !currentOfferId) {
 
             if (!obPopupWin){
 
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     if (arResult.STATUS === 'OK') {
                         BX.onCustomEvent('OnBasketChange');
                         if( PARAMS.BASKET.BASKET_URL )
-                            location.href = PARAMS.BASKET.BASKET_URL;
+                            location.href = PARAMS.BASKET.PATH_TO_ORDER;
                     }
                 }, this)
             });

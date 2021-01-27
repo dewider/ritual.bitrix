@@ -168,10 +168,12 @@ $jsParams = array(
     'BASKET' => array(
         'BASKET_URL' => $arParams['BASKET_URL'],
         'ADD_URL_TEMPLATE' => $arResult['~ADD_URL_TEMPLATE'],
-        'BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE']
+        'BUY_URL_TEMPLATE' => $arResult['~BUY_URL_TEMPLATE'],
+        "PATH_TO_ORDER" => SITE_DIR."personal/order/make/"
     )
 );
 ?>
+<pre><?=var_dump($arResult)?></pre>
 <script>
     var PARAMS = <?=CUtil::PhpToJSObject($jsParams, false, true)?>
 </script>
